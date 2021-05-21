@@ -3,6 +3,8 @@
 #include <iostream>
 #include "User.h"
 #include <vector>
+#include <cstdlib>
+#include <windows.h>
 
 using namespace std;
 
@@ -11,10 +13,12 @@ class UserManager
     int loggedInUserId;
     vector <User> users;
     User getNewUserData();
-    bool isLoginExisting(string login);
+    bool isTheLoginInUse(string login);
+    int checkPasswordUpToThreeTimes(User user, string username);
 
 public:
     vector <User> registerNewUser();
+    void logInToUserAccount();
 };
 
 

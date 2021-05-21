@@ -11,7 +11,7 @@ class PersonalBudget
 
 public:
     void registerNewUser();
-
+    void logInToUserAccount();
 };
 
 
