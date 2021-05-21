@@ -11,7 +11,10 @@ int main()
 {
     PersonalBudget personalBudget;
     personalBudget.registerNewUser();
+    personalBudget.registerNewUser();
     personalBudget.logInToUserAccount();
+    personalBudget.logOutTheUser();
+
 
 //    User user;
 //    string name = "Karolina";

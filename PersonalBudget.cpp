@@ -9,3 +9,7 @@ void PersonalBudget:: logInToUserAccount()
 {
     userManager.logInToUserAccount();
 }
+void PersonalBudget:: logOutTheUser()
+{
+    userManager.logOutTheUser();
+}

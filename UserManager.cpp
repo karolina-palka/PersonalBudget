@@ -65,15 +65,15 @@ void UserManager::logInToUserAccount()
     string username, password;
     cout << "Enter the username: " << endl;
     cin >> username;
-    int usersNumber = users.size();
+//    int usersNumber = users.size();
 //    cout << "usersNumber: " << usersNumber << endl;
-    while (i < usersNumber)
+    while (i < users.size())
+//    while (isTheLoginInUse(users[i].getLogin()) == true)
     {
         loggedInUserId = checkPasswordUpToThreeTimes(users[i], username);
         if (loggedInUserId ==-1)
         {
             break;
-//            return id;
         }
         else if (loggedInUserId> 0)
         {
@@ -81,9 +81,8 @@ void UserManager::logInToUserAccount()
         }
         i++;
     }
-    Sleep(1500);
+//    Sleep(1500);
     cout << "id: " << loggedInUserId << endl;
-//    cout << "You are logged in." << endl;
 //    return id;
 }
 int UserManager::checkPasswordUpToThreeTimes(User user, string username)
@@ -92,7 +91,7 @@ int UserManager::checkPasswordUpToThreeTimes(User user, string username)
     string password="";
     cout << "username: " << username << endl;
     string login = user.getLogin();
-    cout << "user get login:" << login << endl;
+
     if (user.getLogin() == username)
     {
         for (int j=0; j<3; j++)
@@ -111,4 +110,9 @@ int UserManager::checkPasswordUpToThreeTimes(User user, string username)
         Sleep(3000);
     }
     return id;
+}
+void UserManager:: logOutTheUser()
+{
+    int loggedInUserId = 0;
+    cout << "loggedInUserId: " << loggedInUserId << endl;
 }

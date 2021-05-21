@@ -19,6 +19,7 @@ class UserManager
 public:
     vector <User> registerNewUser();
     void logInToUserAccount();
+    void logOutTheUser();
 };
 
 
