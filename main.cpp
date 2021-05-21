@@ -1,9 +1,17 @@
 #include <iostream>
+//#include "UserManager.h"
+#include "PersonalBudget.h"
+//#include "User.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    PersonalBudget personalBudget;
+    personalBudget.registerNewUser();
+
+//    User user;
+//    string name = "Karolina";
+//    user.setName(name);
+//    cout << user.getName() << endl;
 }
