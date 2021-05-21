@@ -1,0 +1,5 @@
+obj/*
+bin/*
+README.md
+*.cbp
+*.txt
