@@ -17,6 +17,7 @@ public:
 //        CMarkup xml;
 //    }
     void addUserToXmlFile(User user);
+    vector <User> loadUsersFromFile();
 };
 
 

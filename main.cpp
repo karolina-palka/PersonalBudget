@@ -10,10 +10,15 @@ using namespace std;
 int main()
 {
     PersonalBudget personalBudget("users.xml");
-    personalBudget.registerNewUser();
+//    personalBudget.registerNewUser();
+    personalBudget.loadUsersFromFile();
+
+//    personalBudget.registerNewUser();
+//    personalBudget.loadUsersFromFile();
+
 //    personalBudget.registerNewUser();
     personalBudget.logInToUserAccount();
-    personalBudget.logOutTheUser();
+//    personalBudget.logOutTheUser();
 
 
 //    User user;

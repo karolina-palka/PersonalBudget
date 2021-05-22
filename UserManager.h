@@ -24,6 +24,7 @@ public:
     vector <User> registerNewUser();
     void logInToUserAccount();
     void logOutTheUser();
+    void loadUsersFromFile();
 };
 
 
