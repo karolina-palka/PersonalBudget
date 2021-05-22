@@ -7,6 +7,7 @@ vector <User> UserManager:: registerNewUser()
 
     User user = getNewUserData();
     users.push_back(user);
+    xmlUsersFile.addUserToXmlFile(user);
 
     cout << "User account created:" << endl;
     return users;

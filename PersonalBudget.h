@@ -10,6 +10,7 @@ class PersonalBudget
     UserManager userManager;
 
 public:
+    PersonalBudget(string usersFileName): userManager(usersFileName){};
     void registerNewUser();
     void logInToUserAccount();
     void logOutTheUser();

@@ -9,9 +9,9 @@ using namespace std;
 
 int main()
 {
-    PersonalBudget personalBudget;
+    PersonalBudget personalBudget("users.xml");
     personalBudget.registerNewUser();
-    personalBudget.registerNewUser();
+//    personalBudget.registerNewUser();
     personalBudget.logInToUserAccount();
     personalBudget.logOutTheUser();
 
