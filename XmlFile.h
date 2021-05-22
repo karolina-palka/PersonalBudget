@@ -14,10 +14,7 @@ public:
     CMarkup xml;
     string getFileName();
     XmlFile(string fileName): FILE_NAME(fileName){};
-//    XmlFile()
-//        {
-//            CMarkup xml;
-//        }
+
     bool isFileEmpty();
 };
 

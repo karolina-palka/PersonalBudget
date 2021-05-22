@@ -2,6 +2,7 @@
 <!DOCTYPE user SYSTEM 'users.dtd'>
 <!--user-->
 <user>
+<userId>1</userId>
 <userData>
 <login>karo</login>
 <password>123</password>

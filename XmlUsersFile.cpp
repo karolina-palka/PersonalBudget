@@ -15,8 +15,9 @@ void XmlUsersFile:: addUserToXmlFile(User user)
 
     xml.AddElem("user");
     xml.IntoElem();
-//    int userId = user.getId();
-//    xml.AddElem("userId", userId);
+    int userId = user.getId();
+//    string userIdStr = AuxiliaryMethods:: convertIntToString(userId);
+    xml.AddElem("userId", userId);
     xml.AddElem("userData");
     string login = user.getLogin();
     xml.AddChildElem("login", login);
