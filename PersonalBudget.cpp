@@ -13,7 +13,7 @@ void PersonalBudget:: logOutTheUser()
 {
     userManager.logOutTheUser();
 }
-void PersonalBudget:: loadUsersFromFile()
-{
-    userManager.loadUsersFromFile();
-}
+//void PersonalBudget:: loadUsersFromFile()
+//{
+//    userManager.loadUsersFromFile();
+//}

@@ -14,7 +14,7 @@ public:
     void registerNewUser();
     void logInToUserAccount();
     void logOutTheUser();
-    void loadUsersFromFile();
+//    void loadUsersFromFile();
 };
 
 
