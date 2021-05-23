@@ -29,6 +29,7 @@ public:
     vector <User> registerNewUser();
     void logInToUserAccount();
     void logOutTheUser();
+    int getTheUserId();
 //    void loadUsersFromFile();
 };
 

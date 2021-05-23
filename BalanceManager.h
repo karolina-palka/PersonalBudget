@@ -9,14 +9,15 @@ class BalanceManager
 {
     IncomeManager* incomeManager;
     ExpenseManager* expenseManager;
+//    const int LOGGED_IN_USER_ID;
 //    const string INCOMES_FILE_NAME;
 
     public:
-    BalanceManager(string incomes_file_name)
+    BalanceManager(string incomes_file_name, int loggedInUserId)
     {
         incomeManager = NULL;
         expenseManager = NULL;
-        incomeManager = new IncomeManager(incomes_file_name);
+        incomeManager = new IncomeManager(incomes_file_name, loggedInUserId);
     }
     ~BalanceManager()
     {

@@ -30,22 +30,38 @@ void XmlFinanceFile:: addFinancesToXmlFile(Finance finance, string financeType)
     xml.AddChildElem("amount", amount);
     xml.Save(XmlFile::getFileName());
 }
-vector <Finance> XmlFinanceFile:: loadFinancesFromFile(string financeType)
+vector <Finance> XmlFinanceFile:: loadFinancesFromFile(string financeType, int loggedInUserId)
 {
- //   if (isFileEmpty()== true)
     Finance finance;
     vector <Finance> finances;
     cout << "financeType: " << financeType << endl;
-//    int userId;
-//    string login, name, surname, password, userIdstr;
+
     xml.Load(XmlFile::getFileName());
-//    cout << "filename: " << XmlFile::getFileName() << endl;
-//    xml.FindElem("user");
-//    int i =0;
+    string loggedInUserIdStr = AuxiliaryMethods:: convertIntToString(loggedInUserId);
+
     while (xml.FindElem(financeType)==true)
     {
-        finance = loadFinanceFromFile();
-/*        xml.IntoElem();
+        finance = loadFinanceFromFile(loggedInUserIdStr);
+        if (finance.getAmount() == 0)
+        {
+            cout << "You don't have any incomes yet." << endl;
+            return finances;
+        }
+        else
+        {
+            finances.push_back(finance);
+            cout << "Loaded." << endl;
+        }
+    }
+    return finances;
+}
+Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
+{
+    Finance finance;
+    xml.IntoElem();
+    xml.FindElem("userId");
+    if (loggedInUserIdStr == xml.GetData())
+    {
         xml.FindElem("financeId");
         string financeIdstr = xml.GetData();
         int financeId = AuxiliaryMethods:: convertStringToInteger(financeIdstr);
@@ -58,9 +74,7 @@ vector <Finance> XmlFinanceFile:: loadFinancesFromFile(string financeType)
         finance.setDate(AuxiliaryMethods:: convertStringToInteger(dateStr));
         cout << finance.getDate() << endl;
         xml.FindElem("item");
-
         finance.setItem(xml.GetData());
-
         cout << finance.getItem() << endl;
         xml.FindElem("amount");
         string amountStr = xml.GetData();
@@ -68,39 +82,8 @@ vector <Finance> XmlFinanceFile:: loadFinancesFromFile(string financeType)
         cout << finance.getAmount() << endl;
 
         xml.OutOfElem();
-        xml.OutOfElem();*/
-
-        finances.push_back(finance);
+        xml.OutOfElem();
     }
-    cout << "Loaded." << endl;
-    return finances;
-}
-Finance XmlFinanceFile:: loadFinanceFromFile()
-{
-    Finance finance;
-    xml.IntoElem();
-    xml.FindElem("financeId");
-    string financeIdstr = xml.GetData();
-    int financeId = AuxiliaryMethods:: convertStringToInteger(financeIdstr);
-    finance.setFinanceId(financeId);
-    cout << finance.getFinanceId() << endl;
-    xml.FindElem("financeData");
-    xml.IntoElem();
-    xml.FindElem("date");
-    string dateStr = xml.GetData();
-    finance.setDate(AuxiliaryMethods:: convertStringToInteger(dateStr));
-    cout << finance.getDate() << endl;
-    xml.FindElem("item");
-
-    finance.setItem(xml.GetData());
-
-    cout << finance.getItem() << endl;
-    xml.FindElem("amount");
-    string amountStr = xml.GetData();
-    finance.setAmount(AuxiliaryMethods:: convertStringToInteger(amountStr));
-    cout << finance.getAmount() << endl;
-
-    xml.OutOfElem();
-    xml.OutOfElem();
+    else
     return finance;
 }

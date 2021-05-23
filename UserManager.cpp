@@ -47,6 +47,11 @@ User UserManager:: getNewUserData()
 //    else
 //        return users.back().getId() + 1;
 //}
+int UserManager:: getTheUserId()
+{
+    cout << "loggedInUserId: " << loggedInUserId << endl;
+    return loggedInUserId;
+}
 bool UserManager:: isTheLoginInUse(string login)
 {
     for (int i=0; i<users.size(); i++)
@@ -61,7 +66,7 @@ bool UserManager:: isTheLoginInUse(string login)
 }
 void UserManager::logInToUserAccount()
 {
-    int i =0, loggedInUserId=0;
+    int i =0;
 //    User user;
     string username, password;
     cout << "Enter the username: " << endl;
@@ -115,7 +120,7 @@ int UserManager::checkPasswordUpToThreeTimes(User user, string username)
 void UserManager:: logOutTheUser()
 {
     int loggedInUserId = 0;
-    cout << "loggedInUserId: " << loggedInUserId << endl;
+//    cout << "loggedInUserId: " << loggedInUserId << endl;
 }
 //void UserManager:: loadUsersFromFile()
 //{

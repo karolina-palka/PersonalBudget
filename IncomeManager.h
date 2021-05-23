@@ -13,10 +13,13 @@ class IncomeManager: public FinanceManager
     vector <Finance> incomes;
     XmlFinanceFile xmlIncomeFile;
     const string INCOMES_FILE_NAME;
+    const int LOGGED_IN_USER_ID;
+
 public:
-    IncomeManager(string fileName): INCOMES_FILE_NAME(fileName), xmlIncomeFile(fileName)
+    IncomeManager(string fileName, int loggedInUserId): INCOMES_FILE_NAME(fileName), LOGGED_IN_USER_ID(loggedInUserId), xmlIncomeFile(fileName)
     {
-        incomes = xmlIncomeFile.loadFinancesFromFile("income");
+        incomes = xmlIncomeFile.loadFinancesFromFile("income", LOGGED_IN_USER_ID);
+        cout << "LOGGED_IN_USER_ID: " << loggedInUserId << endl;
     };
 };
 
