@@ -10,9 +10,12 @@ class PersonalBudget
 {
     UserManager userManager;
     BalanceManager* balanceManager;
+    const string INCOMES_FILE_NAME;
+    const string EXPENSES_FILE_NAME;
 
 public:
-    PersonalBudget(string usersFileName): userManager(usersFileName)
+    PersonalBudget(string usersFileName, string incomesFileName, string expense_file_name): userManager(usersFileName),
+    INCOMES_FILE_NAME(incomesFileName), EXPENSES_FILE_NAME(expense_file_name)
     {
         balanceManager = NULL;
     };
