@@ -16,9 +16,8 @@ void XmlFinanceFile:: addFinancesToXmlFile(Finance finance, string financeType)
     xml.AddElem(financeType);
     xml.IntoElem();
 
-//    int userId = user.getId();
-//    string userIdStr = AuxiliaryMethods:: convertIntToString(userId);
-//    xml.AddElem("userId", userId);
+    int userId = finance.getUserId();
+    xml.AddElem("userId", userId);
     int financeId = finance.getFinanceId();
     xml.AddElem("financeId", financeId);
     xml.AddElem("financeData");
@@ -44,7 +43,7 @@ vector <Finance> XmlFinanceFile:: loadFinancesFromFile(string financeType, int l
         finance = loadFinanceFromFile(loggedInUserIdStr);
         if (finance.getAmount() == 0)
         {
-            cout << "You don't have any incomes yet." << endl;
+            cout << "You don't have any " << financeType << "s yet." << endl;
             return finances;
         }
         else

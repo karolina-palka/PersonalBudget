@@ -8,7 +8,7 @@ void PersonalBudget:: registerNewUser()
 void PersonalBudget:: logInToUserAccount()
 {
     userManager.logInToUserAccount();
-    balanceManager = new BalanceManager(INCOMES_FILE_NAME, userManager.getTheUserId());
+    balanceManager = new BalanceManager(INCOMES_FILE_NAME, EXPENSES_FILE_NAME, userManager.getTheUserId());
   //  cout << userManager.getTheUserId() << endl;
 }
 void PersonalBudget:: logOutTheUser()

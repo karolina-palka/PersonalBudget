@@ -12,6 +12,13 @@ class ExpenseManager: public FinanceManager
 {
     vector <Finance> expenses;
     XmlFinanceFile xmlExpensesFile;
+
+public:
+    ExpenseManager(string fileName, int loggedInUserId): FinanceManager(loggedInUserId), xmlExpensesFile(fileName)
+    {
+        expenses = xmlExpensesFile.loadFinancesFromFile("expense", loggedInUserId);
+        cout << "LOGGED_IN_USER_ID: " << loggedInUserId << endl;
+    }
 };
 
 
