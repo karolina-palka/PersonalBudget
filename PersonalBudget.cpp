@@ -8,6 +8,7 @@ void PersonalBudget:: registerNewUser()
 void PersonalBudget:: logInToUserAccount()
 {
     userManager.logInToUserAccount();
+    balanceManager = new BalanceManager(INCOMES_FILE_NAME);
 }
 void PersonalBudget:: logOutTheUser()
 {

@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    PersonalBudget personalBudget("users-1.xml");
+    PersonalBudget personalBudget("users-1.xml", "incomes.xml");
 //    personalBudget.registerNewUser();
 //    personalBudget.loadUsersFromFile();
 
@@ -17,7 +17,7 @@ int main()
 //    personalBudget.loadUsersFromFile();
 
 //    personalBudget.registerNewUser();
-//    personalBudget.logInToUserAccount();
+    personalBudget.logInToUserAccount();
 //    personalBudget.logOutTheUser();
 
 
