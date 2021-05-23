@@ -10,10 +10,18 @@ class BalanceManager
     IncomeManager* incomeManager;
     ExpenseManager* expenseManager;
 
-BalanceManager()
-{
-    incomeManager = NULL;
-    expenseManager = NULL;
-}
+    public:
+    BalanceManager()
+    {
+        incomeManager = NULL;
+        expenseManager = NULL;
+    }
+    ~BalanceManager()
+    {
+        delete incomeManager;
+        incomeManager = NULL;
+        delete expenseManager;
+        expenseManager = NULL;
+    }
 };
 #endif // BALANCEMANAGER_H_INCLUDED
