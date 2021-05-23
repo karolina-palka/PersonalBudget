@@ -20,11 +20,16 @@ class UserManager
     int checkPasswordUpToThreeTimes(User user, string username);
 
 public:
-    UserManager(string usersFileName): xmlUsersFile(usersFileName) {};
+    UserManager(string usersFileName): xmlUsersFile(usersFileName)
+    {
+        loggedInUserId = 0;
+        users = xmlUsersFile.loadUsersFromFile();
+        cout << "usersSize: " << users.size() << endl;
+    };
     vector <User> registerNewUser();
     void logInToUserAccount();
     void logOutTheUser();
-    void loadUsersFromFile();
+//    void loadUsersFromFile();
 };
 
 

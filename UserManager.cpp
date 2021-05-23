@@ -117,8 +117,8 @@ void UserManager:: logOutTheUser()
     int loggedInUserId = 0;
     cout << "loggedInUserId: " << loggedInUserId << endl;
 }
-void UserManager:: loadUsersFromFile()
-{
-    users = xmlUsersFile.loadUsersFromFile();
-    cout << "usersSize: " << users.size() << endl;
-}
+//void UserManager:: loadUsersFromFile()
+//{
+//    users = xmlUsersFile.loadUsersFromFile();
+//    cout << "usersSize: " << users.size() << endl;
+//}
