@@ -1,10 +1,11 @@
 #ifndef EXPENSEMANAGER_H_INCLUDED
 #define EXPENSEMANAGER_H_INCLUDED
 #include <iostream>
+#include "FinanceManager.h"
 
 using namespace std;
 
-class ExpenseManager
+class ExpenseManager: public FinanceManager
 {
 
 };
