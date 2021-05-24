@@ -30,16 +30,17 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
         cin.sync();
         cin >> dateStr;
         cout << "dateStr: " << dateStr << endl;
-//        dateManager.setDate(dateStr);
-        dateInt = dateManager.convertCharDateToIntDate(dateStr);
+        dateManager.setDate(dateStr);
+        dateInt = dateManager.convertStringDateToIntDate(dateStr);
         while (dateManager.isDateCorrect(dateInt)==false)
         {
             cin.sync();
             cin >> dateStr;
             cout << "dateStr: " << dateStr << endl;
-            dateInt = dateManager.convertCharDateToIntDate(dateStr);
-        }
             dateManager.setDate(dateStr);
+            dateInt = dateManager.convertStringDateToIntDate(dateStr);
+        }
+//            dateManager.setDate(dateStr);
 //        dateManager.setDate(dateInt);
     }
     finance.setDate(dateStr);

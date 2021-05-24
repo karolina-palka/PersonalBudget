@@ -15,9 +15,10 @@ class DateManager
 public:
     void setDate(string newDate);
     string getDate();
-    int convertCharDateToIntDate(string dateToBeConverted);
+    int convertStringDateToIntDate(string dateToBeConverted);
     bool isDateCorrect(int dateToBeChecked);
     string getActualDateFromTheSystem();
+    int getNumberOfDaysInActualMonth();
 //    static void getDateFromTheUser();
 };
 
