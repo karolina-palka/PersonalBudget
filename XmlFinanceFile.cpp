@@ -24,8 +24,9 @@ void XmlFinanceFile:: addFinancesToXmlFile(Finance finance, string financeType)
     int financeId = finance.getFinanceId();
     xml.AddElem("financeId", financeId);
     xml.AddElem("financeData");
-    int date = finance.getDate();
-    xml.AddChildElem("date", date);
+    string dateStr = finance.getDate();
+    cout << "dateStr: " << dateStr << endl;
+    xml.AddChildElem("date", dateStr);
     string item = finance.getItem();
     xml.AddChildElem("item", item);
     int amount = finance.getAmount();
@@ -62,6 +63,7 @@ Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
     Finance finance;
     xml.IntoElem();
     xml.FindElem("userId");
+    char dateToBeSaved[11];
     if (loggedInUserIdStr == xml.GetData())
     {
         xml.FindElem("financeId");
@@ -73,7 +75,12 @@ Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
         xml.IntoElem();
         xml.FindElem("date");
         string dateStr = xml.GetData();
-        finance.setDate(AuxiliaryMethods:: convertStringToInteger(dateStr));
+        for (int i=0; i<11; i++)
+        {
+            dateToBeSaved[i] = dateStr[i];
+        }
+        finance.setDate(dateToBeSaved);
+//        finance.setDate(AuxiliaryMethods:: convertStringToInteger(dateStr));
         cout << finance.getDate() << endl;
         xml.FindElem("item");
         finance.setItem(xml.GetData());

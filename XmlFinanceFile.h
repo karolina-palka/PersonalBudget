@@ -21,5 +21,4 @@ public:
 };
 
 
-
 #endif // XMLFINANCEFILE_H_INCLUDED

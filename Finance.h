@@ -6,19 +6,20 @@ using namespace std;
 
 class Finance
 {
-    int financeId, userId, date, amount;
+    int financeId, userId, amount;
     string item;
+    char date[11];
 
 public:
     void setFinanceId(int newFinanceId);
     void setUserId(int newUserId);
-    void setDate(int newDate);
+    void setDate(char newDate[11]);
     void setAmount(int newAmount);
     void setItem(string newItem);
 
     int getFinanceId();
     int getUserId();
-    int getDate();
+    string getDate();
     int getAmount();
     string getItem();
 };

@@ -6,6 +6,7 @@
 #include "XmlFinanceFile.h"
 #include "FinanceManager.h"
 
+
 using namespace std;
 
 class ExpenseManager: public FinanceManager

@@ -8,9 +8,13 @@ void Finance:: setUserId(int newUserId)
 {
     userId = newUserId;
 }
-void Finance:: setDate(int newDate)
+void Finance:: setDate(char newDate[11])
 {
-    date = newDate;
+//    date = newDate;
+    for (int i=0; i<11; i++)
+    {
+        date[i] = newDate[i];
+    }
 }
 void Finance:: setAmount(int newAmount)
 {
@@ -28,7 +32,7 @@ int Finance:: getUserId()
 {
     return userId;
 }
-int Finance:: getDate()
+string Finance:: getDate()
 {
     return date;
 }

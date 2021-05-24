@@ -6,25 +6,40 @@ int FinanceManager:: getLoggedInUserId()
 }
 Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 {
-//    string answear;
     Finance finance;
+//    DateManager dateManager;
+    char dateStr[11];
     vector <Finance> finances;
-    int date, amount;
+    int dateInt, amount, test=210514;
     string item;
     cout << "Is this " << financeType << " from today? y/n" << endl;
     cin.sync();
     char answear = AuxiliaryMethods::getChar();
     if (answear=='y')
     {
-        date = 210524;
+        dateInt = 210524;
     }
     else
     {
-        cout << "Please, type the date in the 'yyyy-mm-dd format" << endl;
+//        DateManager:: getDateFromTheUser
+//        char dateStr[11] = DateManager::getDate();
+        cout << "Please, type the date in the 'yyyy-mm-dd format'" << endl;
         cin.sync();
-        cin >> date;
+        cin >> dateStr;
+        cout << "dateStr: " << dateStr << endl;
+//        dateManager.setDate(dateStr);
+        dateInt = dateManager.convertCharDateToIntDate(dateStr);
+        while (dateManager.isDateCorrect(dateInt)==false)
+        {
+            cin.sync();
+            cin >> dateStr;
+            cout << "dateStr: " << dateStr << endl;
+            dateInt = dateManager.convertCharDateToIntDate(dateStr);
+        }
+            dateManager.setDate(dateStr);
+//        dateManager.setDate(dateInt);
     }
-    finance.setDate(date);
+    finance.setDate(dateStr);
     cout << "What is the name for that " << financeType << "?" << endl;
     cin.sync();
     item = AuxiliaryMethods::getTheLine();
