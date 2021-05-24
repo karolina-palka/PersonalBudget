@@ -1,19 +1,19 @@
 #include "DateManager.h"
 
-void DateManager:: setDate(char newDate[11])
+void DateManager:: setDate(string newDate)
 {
-    for (int i=0; i<11; i++)
-    {
-        date[i] = newDate[i];
-    }
-//    date = newDate;
+//    for (int i=0; i<11; i++)
+//    {
+//        date[i] = newDate[i];
+//    }
+    date = newDate;
     cout << "date: " << date << endl;
 }
-char DateManager:: getDate()
+string DateManager:: getDate()
 {
-    return date[11];
+    return date;
 }
-int DateManager:: convertCharDateToIntDate(char dateToBeConverted[11])
+int DateManager:: convertCharDateToIntDate(string dateToBeConverted)
 {
     string dateToConvert="";
     int dateInt=0;
@@ -38,6 +38,16 @@ bool DateManager:: isDateCorrect(int dateToBeChecked)
         cout << "The date you typed in is incorrect. Please type again." << endl;
     }
         return false;
+}
+string DateManager:: getActualDateFromTheSystem()
+{
+    time_t now = time(0);
+    const int MAXLEN = 11;
+    char actualDate[MAXLEN];
+    tm* local_time = localtime(&now);
+    strftime(actualDate, MAXLEN, "%Y-%m-%d", local_time);
+    cout << "actualDate: " << actualDate << endl;
+    return actualDate;
 }
 /*void DateManager:: getDateFromTheUser()
 {

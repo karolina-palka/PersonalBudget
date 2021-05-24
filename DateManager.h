@@ -8,14 +8,16 @@ using namespace std;
 
 class DateManager
 {
-    char date[11];
+//    char date[11];
 //    int date;
+    string date;
 
 public:
-    void setDate(char newDate[11]);
-    char getDate();
-    int convertCharDateToIntDate(char dateToBeConverted[11]);
+    void setDate(string newDate);
+    string getDate();
+    int convertCharDateToIntDate(string dateToBeConverted);
     bool isDateCorrect(int dateToBeChecked);
+    string getActualDateFromTheSystem();
 //    static void getDateFromTheUser();
 };
 

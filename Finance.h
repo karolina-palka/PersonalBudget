@@ -7,13 +7,13 @@ using namespace std;
 class Finance
 {
     int financeId, userId, amount;
-    string item;
-    char date[11];
+    string item, date;
+//    char date[11];
 
 public:
     void setFinanceId(int newFinanceId);
     void setUserId(int newUserId);
-    void setDate(char newDate[11]);
+    void setDate(string newDate);
     void setAmount(int newAmount);
     void setItem(string newItem);
 

@@ -8,7 +8,8 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 {
     Finance finance;
 //    DateManager dateManager;
-    char dateStr[11];
+//    char dateStr[11];
+    string dateStr;
     vector <Finance> finances;
     int dateInt, amount, test=210514;
     string item;
@@ -17,7 +18,9 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     char answear = AuxiliaryMethods::getChar();
     if (answear=='y')
     {
-        dateInt = 210524;
+//        dateInt = 210524;
+        dateStr = dateManager.getActualDateFromTheSystem();
+        dateManager.setDate(dateStr);
     }
     else
     {
