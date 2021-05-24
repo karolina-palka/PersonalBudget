@@ -5,7 +5,7 @@ void XmlUsersFile:: addUserToXmlFile(User user)
 //    fstream file;
 //    bool fileStatus;
 //    char fileName[]="users.txt";
-    if (isFileEmpty()== true)
+    if (isFileEmpty("user")== true)
     {
         xml.ResetPos();
         xml.InsertNode( xml.MNT_PROCESSING_INSTRUCTION, "xml" );
@@ -15,7 +15,7 @@ void XmlUsersFile:: addUserToXmlFile(User user)
 
         xml.AddNode( CMarkup::MNT_COMMENT, "user" );
     }
-
+    while (xml.FindElem("user")){}
     xml.AddElem("user");
     xml.IntoElem();
 

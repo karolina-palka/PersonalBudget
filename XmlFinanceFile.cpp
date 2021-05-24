@@ -2,7 +2,7 @@
 
 void XmlFinanceFile:: addFinancesToXmlFile(Finance finance, string financeType)
 {
-        if (isFileEmpty()== true)
+    if (isFileEmpty(financeType)== true)
     {
         xml.ResetPos();
         xml.InsertNode( xml.MNT_PROCESSING_INSTRUCTION, "xml" );
@@ -12,6 +12,9 @@ void XmlFinanceFile:: addFinancesToXmlFile(Finance finance, string financeType)
 
         xml.AddNode( CMarkup::MNT_COMMENT, financeType );
     }
+//    xml.FindElem
+//    xml.FindPrevElem(financeType);
+    while (xml.FindElem(financeType)){}
 
     xml.AddElem(financeType);
     xml.IntoElem();

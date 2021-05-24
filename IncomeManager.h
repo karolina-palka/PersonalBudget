@@ -21,6 +21,7 @@ public:
         incomes = xmlIncomeFile.loadFinancesFromFile("income", loggedInUserId);
         cout << "LOGGED_IN_USER_ID: " << loggedInUserId << endl;
     };
+    void addNewIncome();
 };
 
 #endif // INCOMEMANAGER_H_INCLUDED

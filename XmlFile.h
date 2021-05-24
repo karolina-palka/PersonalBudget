@@ -15,7 +15,7 @@ public:
     string getFileName();
     XmlFile(string fileName): FILE_NAME(fileName){};
 
-    bool isFileEmpty();
+    bool isFileEmpty(string keyType);
 };
 
 #endif // XMLFILE_H_INCLUDED

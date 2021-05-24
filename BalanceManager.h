@@ -27,5 +27,6 @@ class BalanceManager
         delete expenseManager;
         expenseManager = NULL;
     }
+    void addNewIncome();
 };
 #endif // BALANCEMANAGER_H_INCLUDED
