@@ -33,8 +33,7 @@ bool DateManager:: isDateCorrect(int dateToBeChecked)
 {
     string daysFromDate = "", actualDate="";
     int actualDateInt;
-//    char sign;
-//    cout << "date: " << date << endl;
+
     for (int j=4; j<8; j+=3)
     {
         if(date[j]!= '-')

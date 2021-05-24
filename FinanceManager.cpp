@@ -43,15 +43,16 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 //            dateManager.setDate(dateStr);
 //        dateManager.setDate(dateInt);
     }
-    finance.setDate(dateStr);
+    finance.setDate(dateInt);
+    finance.setDateStr(dateStr);
     cout << "What is the name for that " << financeType << "?" << endl;
     cin.sync();
     item = AuxiliaryMethods::getTheLine();
-//    getline(cin, item);
+
     finance.setItem(item);
     cout << "How much have it cost?" << endl;
     cin.sync();
-//    amount = AuxiliaryMethods::getTheNumber();
+
     cin >> amount;
     finance.setAmount(amount);
     finance.setUserId(LOGGED_IN_USER_ID);
