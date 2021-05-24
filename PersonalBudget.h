@@ -28,6 +28,7 @@ public:
     void logInToUserAccount();
     void logOutTheUser();
     void addNewIncome();
+    void addNewExpense();
 //    void loadUsersFromFile();
 };
 

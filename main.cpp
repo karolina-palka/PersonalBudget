@@ -18,11 +18,11 @@ int main()
 
 //    personalBudget.registerNewUser();
     personalBudget.logInToUserAccount();
-    personalBudget.addNewIncome();
+    personalBudget.addNewExpense();
 //    personalBudget.logOutTheUser();
 
 
-//    User user;
+//    User user;o
 //    string name = "Karolina";
 //    user.setName(name);
 //    cout << user.getName() << endl;

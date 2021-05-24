@@ -15,6 +15,7 @@ class FinanceManager
 public:
     FinanceManager(int loggedInUserId): LOGGED_IN_USER_ID(loggedInUserId){};
     Finance addNewFinance(string financeType, int financeId);
+    int getLoggedInUserId();
 };
 
 
