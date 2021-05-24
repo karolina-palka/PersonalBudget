@@ -86,6 +86,6 @@ Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
         xml.OutOfElem();
         xml.OutOfElem();
     }
-    else
+//    else
     return finance;
 }
