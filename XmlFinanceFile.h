@@ -10,11 +10,14 @@ using namespace std;
 
 class XmlFinanceFile: public XmlFile
 {
+    int financeId;
     Finance loadFinanceFromFile(string loggedInUserIdStr);
+
 public:
     XmlFinanceFile(string fileName): XmlFile(fileName) {};
     void addFinancesToXmlFile(Finance finance, string financeType);
     vector <Finance> loadFinancesFromFile(string financeType, int loggedInUserId);
+    int getNewFinanceId(string financeType, int loggedInUserId);
 };
 
 

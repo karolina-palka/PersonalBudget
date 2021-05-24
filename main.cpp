@@ -22,7 +22,7 @@ int main()
 //    personalBudget.logOutTheUser();
 
 
-//    User user;
+//    User user;o
 //    string name = "Karolina";
 //    user.setName(name);
 //    cout << user.getName() << endl;

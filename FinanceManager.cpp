@@ -1,5 +1,9 @@
 #include "FinanceManager.h"
 
+int FinanceManager:: getLoggedInUserId()
+{
+    return LOGGED_IN_USER_ID;
+}
 Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 {
 //    string answear;

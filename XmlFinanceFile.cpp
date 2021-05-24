@@ -89,3 +89,27 @@ Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
 //    else
     return finance;
 }
+int XmlFinanceFile:: getNewFinanceId(string financeType, int loggedInUserId)
+{
+    int financeId = 0;
+    xml.Load(XmlFile::getFileName());
+    string loggedInUserIdStr = AuxiliaryMethods:: convertIntToString(loggedInUserId);
+    cout << "loggedInUserIdStr: " << loggedInUserIdStr << endl;
+
+    while (xml.FindElem(financeType))
+    {
+        xml.IntoElem();
+        xml.FindElem("userId");
+//        cout << "Jestem tutaj" << endl;
+        if (loggedInUserIdStr == xml.GetData())
+        {
+            xml.FindElem("financeId");
+            string financeIdstr = xml.GetData();
+            cout << "financeIdstr: " << financeIdstr << endl;
+            financeId = AuxiliaryMethods:: convertStringToInteger(financeIdstr);
+        }
+        xml.OutOfElem();
+    }
+    cout << "financeId: " << financeId << endl;
+    return financeId + 1;
+}
