@@ -15,6 +15,10 @@ void PersonalBudget:: logOutTheUser()
 {
     userManager.logOutTheUser();
 }
+void PersonalBudget:: addNewIncome()
+{
+    balanceManager->addNewIncome();
+}
 //void PersonalBudget:: loadUsersFromFile()
 //{
 //    userManager.loadUsersFromFile();
