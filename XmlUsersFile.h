@@ -9,13 +9,11 @@ using namespace std;
 
 class XmlUsersFile: public XmlFile
 {
-//    CMarkup xml;
+    User loadUserDataFromFile();
+
 public:
     XmlUsersFile(string fileName): XmlFile(fileName) {};
-//    XmlUsersFile()
-//    {
-//        CMarkup xml;
-//    }
+
     void addUserToXmlFile(User user);
     vector <User> loadUsersFromFile();
 };
