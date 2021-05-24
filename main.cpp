@@ -18,7 +18,7 @@ int main()
 
 //    personalBudget.registerNewUser();
     personalBudget.logInToUserAccount();
-    personalBudget.addNewIncome();
+    personalBudget.addNewExpense();
 //    personalBudget.logOutTheUser();
 
 

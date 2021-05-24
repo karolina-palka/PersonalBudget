@@ -19,6 +19,11 @@ void PersonalBudget:: addNewIncome()
 {
     balanceManager->addNewIncome();
 }
+void PersonalBudget:: addNewExpense()
+{
+    balanceManager->addNewExpense();
+}
+
 //void PersonalBudget:: loadUsersFromFile()
 //{
 //    userManager.loadUsersFromFile();

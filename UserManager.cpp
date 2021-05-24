@@ -67,14 +67,12 @@ bool UserManager:: isTheLoginInUse(string login)
 void UserManager::logInToUserAccount()
 {
     int i =0;
-//    User user;
     string username, password;
     cout << "Enter the username: " << endl;
     cin >> username;
-//    int usersNumber = users.size();
-//    cout << "usersNumber: " << usersNumber << endl;
+
     while (i < users.size())
-//    while (isTheLoginInUse(users[i].getLogin()) == true)
+
     {
         loggedInUserId = checkPasswordUpToThreeTimes(users[i], username);
         if (loggedInUserId ==-1)
@@ -87,15 +85,13 @@ void UserManager::logInToUserAccount()
         }
         i++;
     }
-//    Sleep(1500);
     cout << "id: " << loggedInUserId << endl;
-//    return id;
 }
 int UserManager::checkPasswordUpToThreeTimes(User user, string username)
 {
     int id = 0;
     string password="";
-    cout << "username: " << username << endl;
+  //  cout << "username: " << username << endl;
     string login = user.getLogin();
 
     if (user.getLogin() == username)

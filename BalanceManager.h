@@ -28,5 +28,6 @@ class BalanceManager
         expenseManager = NULL;
     }
     void addNewIncome();
+    void addNewExpense();
 };
 #endif // BALANCEMANAGER_H_INCLUDED
