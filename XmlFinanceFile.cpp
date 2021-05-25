@@ -35,39 +35,68 @@ void XmlFinanceFile:: addFinancesToXmlFile(Finance finance, string financeType)
     xml.AddChildElem("amount", amount);
     xml.Save(XmlFile::getFileName());
 }
+/* bool XmlFinanceFile:: isAnyFinanceSaved(string financeType, int loggedInUserId)
+ {
+//    int financeId = 0;
+    bool status=false;
+    xml.Load(XmlFile::getFileName());
+//    xml.FindElem(financeType);
+    cout << "fileName: " << XmlFile::getFileName() << endl;
+    cout << "financeType: " << financeType << endl;
+    string loggedInUserIdStr = AuxiliaryMethods:: convertIntToString(loggedInUserId);
+
+    while(xml.FindElem(financeType)==true)
+    {
+        xml.IntoElem();
+        xml.FindElem("userId");
+        if (loggedInUserIdStr == xml.GetData())
+        {
+            status = true;
+        }
+        xml.OutOfElem();
+    }
+    return status;
+ }*/
+// void openXmlFile()
+// {
+//     xml.Load(XmlFile::getFileName());
+// }
 vector <Finance> XmlFinanceFile:: loadFinancesFromFile(string financeType, int loggedInUserId)
 {
     Finance finance;
     vector <Finance> finances;
+//    finances.clear();
     cout << "financeType: " << financeType << endl;
 
     xml.Load(XmlFile::getFileName());
-    string loggedInUserIdStr = AuxiliaryMethods:: convertIntToString(loggedInUserId);
+//    string loggedInUserIdStr = AuxiliaryMethods:: convertIntToString(loggedInUserId);
 
     while (xml.FindElem(financeType)==true)
     {
-        finance = loadFinanceFromFile(loggedInUserIdStr);
-        if (finance.getAmount() == 0)
-        {
-            cout << "You don't have any " << financeType << "s yet." << endl;
-            return finances;
-        }
-        else
+        finance = loadFinanceFromFile(loggedInUserId);
+        if (finance.getAmount() != 0)
         {
             finances.push_back(finance);
             cout << "Loaded." << endl;
         }
     }
+    if (finances.empty()==true)
+        cout << "You don't have any " << financeType << "s yet." << endl;
     return finances;
 }
-Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
+Finance XmlFinanceFile:: loadFinanceFromFile(int loggedInUserId)
 {
     Finance finance;
     xml.IntoElem();
     xml.FindElem("userId");
-    char dateToBeSaved[11];
+//    char dateToBeSaved[11];
+    string loggedInUserIdStr = AuxiliaryMethods:: convertIntToString(loggedInUserId);
     if (loggedInUserIdStr == xml.GetData())
     {
+//        cout << "Udalo sie tu dostac!" << endl;
+        int userId = AuxiliaryMethods::convertStringToInteger(xml.GetData());
+        finance.setUserId(userId);
+        cout << finance.getUserId() << endl;
         xml.FindElem("financeId");
         string financeIdstr = xml.GetData();
         int financeId = AuxiliaryMethods:: convertStringToInteger(financeIdstr);
@@ -78,10 +107,7 @@ Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
         xml.FindElem("date");
         string dateStr = xml.GetData();
         int date = AuxiliaryMethods::convertStringToInteger(dateStr);
-//        for (int i=0; i<11; i++)
-//        {
-//            dateToBeSaved[i] = dateStr[i];
-//        }
+
         finance.setDate(date);
 //        finance.setDate(AuxiliaryMethods:: convertStringToInteger(dateStr));
         cout << finance.getDate() << endl;
@@ -100,7 +126,17 @@ Finance XmlFinanceFile:: loadFinanceFromFile(string loggedInUserIdStr)
         xml.OutOfElem();
         xml.OutOfElem();
     }
-//    else
+    else
+    {
+        xml.OutOfElem();
+        xml.OutOfElem();
+        finance.setUserId(0);
+        finance.setFinanceId(0);
+        finance.setDate(0);
+        finance.setDateStr("");
+        finance.setItem("");
+        finance.setAmount(0);
+    }
     return finance;
 }
 int XmlFinanceFile:: getNewFinanceId(string financeType, int loggedInUserId)
