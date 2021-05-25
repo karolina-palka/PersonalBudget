@@ -91,7 +91,6 @@ int UserManager::checkPasswordUpToThreeTimes(User user, string username)
 {
     int id = 0;
     string password="";
-  //  cout << "username: " << username << endl;
     string login = user.getLogin();
 
     if (user.getLogin() == username)
@@ -136,7 +135,7 @@ char UserManager:: chooseOptionFromMainMenu()
 }
 bool UserManager:: isTheUserLoggedIn()
 {
-    if(loggedInUserId==0)
+    if(loggedInUserId==0 || loggedInUserId==-1 )
         return false;
     else
         return true;
