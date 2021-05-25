@@ -12,7 +12,7 @@ void ExpenseManager:: addNewExpense()
 void ExpenseManager:: sortOutExpensesByDate()
 {
     sortOutFinancesByDate(expenses);
-    for (int i=0; i< expenses.size(); i++)
+/*    for (int i=0; i< expenses.size(); i++)
     {
         cout << "userId: " <<  expenses[i].getUserId() << endl;
         cout << "financeId: " << expenses[i].getFinanceId() << endl;
@@ -20,7 +20,7 @@ void ExpenseManager:: sortOutExpensesByDate()
         cout << "dateStr: " << expenses[i].getDateStr() << endl;
         cout << "item: " << expenses[i].getItem() << endl;
         cout << "amount: " << expenses[i].getAmount() << endl;
-    }
+    }*/
 }
 double ExpenseManager:: sumUpExpensesFromTheCurrentMonth()
 {
