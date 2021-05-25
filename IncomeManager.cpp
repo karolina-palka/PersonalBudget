@@ -24,3 +24,15 @@ void IncomeManager:: sortOutIncomesByDate()
         cout << "Amount: " << incomes[i].getAmount() << endl;
     }
 }
+double IncomeManager:: sumUpIncomesFromTheCurrentMonth()
+{
+    double allIncomes = sumUpFinancesFromTheCurrentMonth(incomes);
+}
+double IncomeManager:: sumUpIncomesFromThePreviousMonth()
+{
+    double allIncomes = sumUpFinancesFromThePreviousMonth(incomes);
+}
+double IncomeManager:: sumUpIncomesFromTheChosenPeriod(int dateFrom, int dateUpToInt)
+{
+    double allIncomes = sumUpFinancesFromTheChosenPeriod(incomes, dateFrom, dateUpToInt);
+}

@@ -22,3 +22,15 @@ void ExpenseManager:: sortOutExpensesByDate()
         cout << "amount: " << expenses[i].getAmount() << endl;
     }
 }
+double ExpenseManager:: sumUpExpensesFromTheCurrentMonth()
+{
+    double allExpenses = sumUpFinancesFromTheCurrentMonth(expenses);
+}
+double ExpenseManager:: sumUpExpensesFromThePreviousMonth()
+{
+    double allExpenses = sumUpFinancesFromThePreviousMonth(expenses);
+}
+double ExpenseManager:: sumUpExpensesFromTheChosenPeriod(int dateFrom, int dateUpToInt)
+{
+    double allExpenses = sumUpFinancesFromTheChosenPeriod(expenses, dateFrom, dateUpToInt);
+}
