@@ -9,9 +9,10 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     Finance finance;
 //    DateManager dateManager;
 //    char dateStr[11];
-    string dateStr;
+    string dateStr, amountStr;
     vector <Finance> finances;
-    int dateInt, amount, test=210514;
+    int dateInt;
+    double amount;
     string item;
     cout << "Is this " << financeType << " from today? y/n" << endl;
     cin.sync();
@@ -52,7 +53,8 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     cout << "How much have it cost?" << endl;
     cin.sync();
 
-    cin >> amount;
+    cin >> amountStr;
+    amount = AuxiliaryMethods::convertStringToDouble(amountStr);
     finance.setAmount(amount);
     finance.setUserId(LOGGED_IN_USER_ID);
     finance.setFinanceId(financeId);

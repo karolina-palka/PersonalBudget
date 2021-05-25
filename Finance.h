@@ -6,7 +6,8 @@ using namespace std;
 
 class Finance
 {
-    int financeId, userId, amount, date;
+    int financeId, userId, date;
+    double amount;
     string item, dateStr;
 //    char date[11];
 
@@ -15,14 +16,14 @@ public:
     void setUserId(int newUserId);
     void setDate(int newDate);
     void setDateStr(string newDateStr);
-    void setAmount(int newAmount);
+    void setAmount(double newAmount);
     void setItem(string newItem);
 
     int getFinanceId();
     int getUserId();
     int getDate();
     string getDateStr();
-    int getAmount();
+    double getAmount();
     string getItem();
 };
 

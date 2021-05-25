@@ -16,6 +16,8 @@ public:
     static string getTheNumber(string text, int charPosition);
     static int convertStringToInteger(string number);
     static char getChar();
+    static double convertStringToDouble(string stringToBeConverted);
+    static string convertDoubleToString(double numberToBeConverted);
 //    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 //    static int wczytajLiczbeCalkowita();
 };
