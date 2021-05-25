@@ -42,7 +42,8 @@ int main()
                 }
             case '6':
                 {
-                    ;
+                    personalBudget.changePassword();
+                    break;
                 }
             case '7':
                 {

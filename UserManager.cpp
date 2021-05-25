@@ -140,3 +140,18 @@ bool UserManager:: isTheUserLoggedIn()
     else
         return true;
 }
+void UserManager:: changePassword()
+{
+    string newPassword="";
+    cout << "Please, type in new password: " << endl;
+    newPassword = AuxiliaryMethods::getTheLine();
+    for (int i=0; i< users.size(); i++)
+    {
+        if (users[i].getId() == loggedInUserId)
+        {
+            users[i].setPassword(newPassword);
+            xmlUsersFile.saveNewPasswordToXmlFile(users[i]);
+        }
+    }
+//    cout << "The new password has been saved." << endl;
+}
