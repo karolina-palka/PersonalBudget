@@ -49,6 +49,16 @@ char AuxiliaryMethods:: getChar()
     }
     return character;
 }
+double AuxiliaryMethods:: convertStringToDouble(string stringToBeConverted)
+{
+    double number = stod(stringToBeConverted);
+    return number;
+}
+string AuxiliaryMethods:: convertDoubleToString(double numberToBeConverted)
+{
+    string numberStr = to_string(numberToBeConverted);
+    return numberStr;
+}
 /*string MetodyPomocnicze:: zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
 {
     if (!tekst.empty())

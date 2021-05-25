@@ -11,7 +11,8 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 //    char dateStr[11];
     string dateStr;
     vector <Finance> finances;
-    int dateInt, amount, test=210514;
+    int dateInt;
+    double amount;
     string item;
     cout << "Is this " << financeType << " from today? y/n" << endl;
     cin.sync();

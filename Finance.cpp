@@ -16,7 +16,7 @@ void Finance:: setDateStr(string newDateStr)
 {
     dateStr = newDateStr;
 }
-void Finance:: setAmount(int newAmount)
+void Finance:: setAmount(double newAmount)
 {
     amount = newAmount;
 }
@@ -40,7 +40,7 @@ string Finance:: getDateStr()
 {
     return dateStr;
 }
-int Finance:: getAmount()
+double Finance:: getAmount()
 {
     return amount;
 }

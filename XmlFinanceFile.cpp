@@ -31,8 +31,10 @@ void XmlFinanceFile:: addFinancesToXmlFile(Finance finance, string financeType)
     xml.AddChildElem("dateStr", dateStr);
     string item = finance.getItem();
     xml.AddChildElem("item", item);
-    int amount = finance.getAmount();
-    xml.AddChildElem("amount", amount);
+    double amount = finance.getAmount();
+    cout << "Amount: " << amount << endl;
+    string amountStr = AuxiliaryMethods:: convertDoubleToString(amount);
+    xml.AddChildElem("amount", amountStr);
     xml.Save(XmlFile::getFileName());
 }
 /* bool XmlFinanceFile:: isAnyFinanceSaved(string financeType, int loggedInUserId)
@@ -120,7 +122,7 @@ Finance XmlFinanceFile:: loadFinanceFromFile(int loggedInUserId)
         cout << finance.getItem() << endl;
         xml.FindElem("amount");
         string amountStr = xml.GetData();
-        finance.setAmount(AuxiliaryMethods:: convertStringToInteger(amountStr));
+        finance.setAmount(AuxiliaryMethods:: convertStringToDouble(amountStr));
         cout << finance.getAmount() << endl;
 
         xml.OutOfElem();
@@ -135,7 +137,7 @@ Finance XmlFinanceFile:: loadFinanceFromFile(int loggedInUserId)
         finance.setDate(0);
         finance.setDateStr("");
         finance.setItem("");
-        finance.setAmount(0);
+        finance.setAmount(0.0);
     }
     return finance;
 }
