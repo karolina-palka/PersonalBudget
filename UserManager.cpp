@@ -91,7 +91,6 @@ int UserManager::checkPasswordUpToThreeTimes(User user, string username)
 {
     int id = 0;
     string password="";
-  //  cout << "username: " << username << endl;
     string login = user.getLogin();
 
     if (user.getLogin() == username)
@@ -113,13 +112,31 @@ int UserManager::checkPasswordUpToThreeTimes(User user, string username)
     }
     return id;
 }
-void UserManager:: logOutTheUser()
+int UserManager:: logOutTheUser()
 {
-    int loggedInUserId = 0;
-//    cout << "loggedInUserId: " << loggedInUserId << endl;
+     loggedInUserId = 0;
+     return loggedInUserId;
 }
-//void UserManager:: loadUsersFromFile()
-//{
-//    users = xmlUsersFile.loadUsersFromFile();
-//    cout << "usersSize: " << users.size() << endl;
-//}
+char UserManager:: chooseOptionFromMainMenu()
+{
+    char choice;
+
+    system("cls");
+    cout << "    >>> MAIN MENU <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Register" << endl;
+    cout << "2. Log in" << endl;
+    cout << "9. Exit" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Your choice: ";
+    choice = AuxiliaryMethods::getChar();
+
+    return choice;
+}
+bool UserManager:: isTheUserLoggedIn()
+{
+    if(loggedInUserId==0 || loggedInUserId==-1 )
+        return false;
+    else
+        return true;
+}

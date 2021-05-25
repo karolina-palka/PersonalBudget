@@ -1,33 +1,80 @@
 #include <iostream>
-//#include "UserManager.h"
 #include "PersonalBudget.h"
-//#include <cstdlib>
-//#include <conio.h>
-//#include "User.h"
 
 using namespace std;
 
 int main()
 {
     PersonalBudget personalBudget("users-1.xml", "incomes-1.xml", "expenses.xml");
-//    personalBudget.registerNewUser();
-//    personalBudget.loadUsersFromFile();
 
-//    personalBudget.registerNewUser();
-//    personalBudget.loadUsersFromFile();
+    char choice;
+    while(true)
+    {
+        if (personalBudget.isTheUserLoggedIn())
+        {
+            choice = personalBudget.chooseOptionFromTheUserMenu();
+            switch(choice)
+            {
+            case '1':
+                {
+                    personalBudget.addNewIncome();
+                    break;
+                }
+            case '2':
+                {
+                    personalBudget.addNewExpense();
+                    break;
+                }
+            case '3':
+                {
+                    personalBudget.showCurrentMonthBalance();
+                    break;
+                }
+            case '4':
+                {
+                    personalBudget.showPreviousMonthBalance();
+                    break;
+                }
+            case '5':
+                {
+                    personalBudget.showTheChosenPeriodBalance();
+                    break;
+                }
+            case '6':
+                {
+                    ;
+                }
+            case '7':
+                {
+                    personalBudget.logOutTheUser();
+                    break;
+                }
+            }
+        }
+        else
+        {
+            choice = personalBudget.chooseOptionFromMainMenu();
+            switch(choice)
+            {
+            case '1':
+                {
+                    personalBudget.registerNewUser();
+                    break;
+                }
+            case '2':
+                {
+                    personalBudget.logInToUserAccount();
+                    break;
+                }
+            case '9':
+                {
+                    personalBudget.exitTheProgram();
+                    break;
+                }
+            }
+        }
 
-//    personalBudget.registerNewUser();
-    personalBudget.logInToUserAccount();
-//    personalBudget.showCurrentMonthBalance();
-//    personalBudget.showPreviousMonthBalance();
-    personalBudget.showTheChosenPeriodBalance();
-//    personalBudget.sortOutExpensesByDate();
-//    personalBudget.addNewExpense();
-//    personalBudget.logOutTheUser();
+    }
 
 
-//    User user;o
-//    string name = "Karolina";
-//    user.setName(name);
-//    cout << user.getName() << endl;
 }

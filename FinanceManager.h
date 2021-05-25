@@ -13,8 +13,9 @@ using namespace std;
 class FinanceManager
 {
     const int LOGGED_IN_USER_ID;
-//    DateManager dateManager;
+
     double sumUpFinancesFromTheMonth(vector <Finance> &finances, int previousMonth);
+    void displayFinanceData(Finance &finance);
 
 public:
     FinanceManager(int loggedInUserId): LOGGED_IN_USER_ID(loggedInUserId){};
