@@ -1,1 +1,3 @@
 #PersonalBudget
+This program helps you deals with your personal budget.
+After creating the user account and logging in, the user has the following functions at his disposal: adding new income, adding new expense, showing balance from the current month, showing balance from the previous month, showing balance from the chosen period of time, and changing password. The program also sorts the finances by date.
