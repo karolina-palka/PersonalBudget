@@ -52,12 +52,25 @@ void BalanceManager:: showTheChosenPeriodBalance()
     cout << "Total expenses: " << allExpenses << endl;
     cout << "Total balance: " << allIncomes - allExpenses << endl;
 }
-/*void BalanceManager:: sortOutExpensesByDate()
-{
-    expenseManager->sortOutExpensesByDate();
 
-}
-void BalanceManager:: sortOutIncomesByDate()
+char BalanceManager:: chooseOptionFromTheUserMenu()
 {
-    incomeManager->sortOutIncomesByDate();
-}*/
+    char choice;
+
+    system("cls");
+    cout << " >>> USER MENU <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Add new income" << endl;
+    cout << "2. Add new expense" << endl;
+    cout << "3. Show balance from the current month" << endl;
+    cout << "4. Show balance from the previous month" << endl;
+    cout << "5. Show balance from the chosen period" << endl;
+    cout << "---------------------------" << endl;
+    cout << "6. Change password" << endl;
+    cout << "7. Log out" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Your choice: ";
+    choice = AuxiliaryMethods::getChar();
+
+    return choice;
+}

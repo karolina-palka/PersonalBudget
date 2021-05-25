@@ -33,7 +33,6 @@ class BalanceManager
     void showCurrentMonthBalance();
     void showPreviousMonthBalance();
     void showTheChosenPeriodBalance();
-//    void sortOutExpensesByDate();
-//    void sortOutIncomesByDate();
+    char chooseOptionFromTheUserMenu();
 };
 #endif // BALANCEMANAGER_H_INCLUDED

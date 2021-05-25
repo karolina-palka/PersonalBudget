@@ -28,9 +28,11 @@ public:
     };
     vector <User> registerNewUser();
     void logInToUserAccount();
-    void logOutTheUser();
+    int logOutTheUser();
     int getTheUserId();
-//    void loadUsersFromFile();
+    char chooseOptionFromMainMenu();
+    bool isTheUserLoggedIn();
+
 };
 
 

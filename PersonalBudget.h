@@ -1,8 +1,8 @@
 #ifndef PERSONALBUDGET_H_INCLUDED
 #define PERSONALBUDGET_H_INCLUDED
+#include <cstdlib>
 #include "UserManager.h"
 #include "BalanceManager.h"
-
 
 using namespace std;
 
@@ -29,11 +29,15 @@ public:
     void logOutTheUser();
     void addNewIncome();
     void addNewExpense();
-    void sortOutExpensesByDate();
+//    void sortOutExpensesByDate();
     void showCurrentMonthBalance();
     void showPreviousMonthBalance();
     void showTheChosenPeriodBalance();
-//    void loadUsersFromFile();
+    char chooseOptionFromMainMenu();
+    bool isTheUserLoggedIn();
+    void exitTheProgram();
+    char chooseOptionFromTheUserMenu();
+
 };
 
 

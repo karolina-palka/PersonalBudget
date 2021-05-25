@@ -3,6 +3,7 @@
 string AuxiliaryMethods:: getTheLine()
 {
     string input = "";
+    cin.sync();
     getline(cin, input);
     return input;
 }
@@ -16,6 +17,7 @@ string AuxiliaryMethods:: convertIntToString(int number)
 string AuxiliaryMethods:: getTheNumber(string text, int charPosition)
 {
     string number = "";
+    cin.sync();
     while(isdigit(text[charPosition]) == true)
     {
         number += text[charPosition];
@@ -35,7 +37,7 @@ char AuxiliaryMethods:: getChar()
 {
     string input = "";
     char character  = {0};
-
+    cin.sync();
     while (true)
     {
         getline(cin, input);
@@ -66,28 +68,3 @@ string AuxiliaryMethods:: convertDoubleToString(double numberToBeConverted)
     string numberStr = to_string(numberToBeConverted);
     return numberStr;
 }
-/*string MetodyPomocnicze:: zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
-{
-    if (!tekst.empty())
-    {
-        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
-        tekst[0] = toupper(tekst[0]);
-    }
-    return tekst;
-}
-int MetodyPomocnicze:: wczytajLiczbeCalkowita()
-{
-    string wejscie = "";
-    int liczba = 0;
-
-    while (true)
-    {
-        getline(cin, wejscie);
-
-        stringstream myStream(wejscie);
-        if (myStream >> liczba)
-            break;
-        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
-    }
-    return liczba;
-}*/
