@@ -26,3 +26,7 @@ double ExpenseManager:: sumUpExpensesFromTheCurrentMonth()
 {
     double allExpenses = sumUpFinancesFromTheCurrentMonth(expenses);
 }
+double ExpenseManager:: sumUpExpensesFromThePreviousMonth()
+{
+    double allExpenses = sumUpFinancesFromThePreviousMonth(expenses);
+}

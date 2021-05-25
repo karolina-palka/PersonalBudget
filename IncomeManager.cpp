@@ -28,3 +28,7 @@ double IncomeManager:: sumUpIncomesFromTheCurrentMonth()
 {
     double allIncomes = sumUpFinancesFromTheCurrentMonth(incomes);
 }
+double IncomeManager:: sumUpIncomesFromThePreviousMonth()
+{
+    double allIncomes = sumUpFinancesFromThePreviousMonth(incomes);
+}

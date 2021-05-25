@@ -30,6 +30,7 @@ public:
     void addNewExpense();
     void sortOutExpensesByDate();
     double sumUpExpensesFromTheCurrentMonth();
+    double sumUpExpensesFromThePreviousMonth();
 };
 
 

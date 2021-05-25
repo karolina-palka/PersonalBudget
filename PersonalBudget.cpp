@@ -23,13 +23,17 @@ void PersonalBudget:: addNewExpense()
 {
     balanceManager->addNewExpense();
 }
-void PersonalBudget:: sortOutExpensesByDate()
+/*void PersonalBudget:: sortOutExpensesByDate()
 {
     balanceManager->sortOutExpensesByDate();
-}
+}*/
 void PersonalBudget:: showCurrentMonthBalance()
 {
     balanceManager->showCurrentMonthBalance();
+}
+void PersonalBudget:: showPreviousMonthBalance()
+{
+    balanceManager->showPreviousMonthBalance();
 }
 //void PersonalBudget:: loadUsersFromFile()
 //{

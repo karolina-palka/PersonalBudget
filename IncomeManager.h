@@ -27,6 +27,7 @@ public:
     void addNewIncome();
     void sortOutIncomesByDate();
     double sumUpIncomesFromTheCurrentMonth();
+    double sumUpIncomesFromThePreviousMonth();
 };
 
 #endif // INCOMEMANAGER_H_INCLUDED

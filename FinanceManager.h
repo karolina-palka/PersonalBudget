@@ -14,6 +14,7 @@ class FinanceManager
 {
     const int LOGGED_IN_USER_ID;
     DateManager dateManager;
+    double sumUpFinancesFromTheMonth(vector <Finance> &finances, int previousMonth);
 
 public:
     FinanceManager(int loggedInUserId): LOGGED_IN_USER_ID(loggedInUserId){};
@@ -21,6 +22,7 @@ public:
     int getLoggedInUserId();
     void sortOutFinancesByDate(vector <Finance> &finances);
     double sumUpFinancesFromTheCurrentMonth(vector <Finance> &finances);
+    double sumUpFinancesFromThePreviousMonth(vector <Finance> &finances);
 };
 
 

@@ -75,22 +75,21 @@ void FinanceManager:: sortOutFinancesByDate(vector <Finance> &finances)
     };
     sort(finances.begin(), finances.end(), dates_from_older());
 }
-double FinanceManager:: sumUpFinancesFromTheCurrentMonth(vector <Finance> &finances)
+double FinanceManager:: sumUpFinancesFromTheMonth(vector <Finance> &finances, int previousMonth)
 {
     double allFinances=0;
     int monthFromFinances=0, dateFromFinances=0, actualMonth=0;
     string actualDate = dateManager.getActualDateFromTheSystem();
     cout << "actualDate: " << actualDate << endl;
-    int actualDateInt = dateManager.convertStringDateToIntDate(actualDate);
+    int actualDateInt = dateManager.convertStringDateToIntDate(actualDate) - previousMonth;
     cout << "actualDateInt: " << actualDateInt << endl;
     actualMonth = (actualDateInt%10000 - actualDateInt%100)/100;
     cout << "actualMonth: " << actualMonth << endl;
     for (int i=0; i<finances.size(); i++)
     {
         dateFromFinances = finances[i].getDate();
-//        cout << "dateFromFinances: " << dateFromFinances << endl;
         monthFromFinances = (dateFromFinances%10000 - dateFromFinances%100)/100;
-//        cout << "monthFromFinances: " << monthFromFinances << endl;
+        cout << "monthFromFinances: " << monthFromFinances << endl;
         if ( monthFromFinances == actualMonth)
         {
             cout << "dateFromFinances: " << dateFromFinances << endl;
@@ -99,5 +98,15 @@ double FinanceManager:: sumUpFinancesFromTheCurrentMonth(vector <Finance> &finan
             allFinances += finances[i].getAmount();
         }
     }
+    return allFinances;
+}
+double FinanceManager:: sumUpFinancesFromTheCurrentMonth(vector <Finance> &finances)
+{
+    int allFinances = sumUpFinancesFromTheMonth(finances, 0);
+    return allFinances;
+}
+double FinanceManager:: sumUpFinancesFromThePreviousMonth(vector <Finance> &finances)
+{
+    int allFinances = sumUpFinancesFromTheMonth(finances, 100);
     return allFinances;
 }
