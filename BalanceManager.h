@@ -31,5 +31,6 @@ class BalanceManager
     void addNewExpense();
     void showCurrentMonthBalance();
     void sortOutExpensesByDate();
+    void sortOutIncomesByDate();
 };
 #endif // BALANCEMANAGER_H_INCLUDED

@@ -16,8 +16,11 @@ void IncomeManager:: sortOutIncomesByDate()
     sortOutFinancesByDate(incomes);
     for (int i=0; i< incomes.size(); i++)
     {
-        cout << incomes[i].getUserId() << endl;
-        cout << incomes[i].getFinanceId() << endl;
-        cout << incomes[i].getDate() << endl;
+        cout << "User ID: " << incomes[i].getUserId() << endl;
+        cout << "finance ID: " << incomes[i].getFinanceId() << endl;
+        cout << "date: " << incomes[i].getDate() << endl;
+        cout << "dateStr: " << incomes[i].getDateStr() << endl;
+        cout << "Item: " << incomes[i].getItem() << endl;
+        cout << "Amount: " << incomes[i].getAmount() << endl;
     }
 }

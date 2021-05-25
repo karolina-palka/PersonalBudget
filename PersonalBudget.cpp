@@ -27,6 +27,10 @@ void PersonalBudget:: sortOutExpensesByDate()
 {
     balanceManager->sortOutExpensesByDate();
 }
+void PersonalBudget:: showCurrentMonthBalance()
+{
+    balanceManager->showCurrentMonthBalance();
+}
 //void PersonalBudget:: loadUsersFromFile()
 //{
 //    userManager.loadUsersFromFile();

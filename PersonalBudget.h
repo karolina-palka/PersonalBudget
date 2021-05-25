@@ -30,6 +30,7 @@ public:
     void addNewIncome();
     void addNewExpense();
     void sortOutExpensesByDate();
+    void showCurrentMonthBalance();
 //    void loadUsersFromFile();
 };
 

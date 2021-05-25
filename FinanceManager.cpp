@@ -63,16 +63,12 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 }
 void FinanceManager:: sortOutFinancesByDate(vector <Finance> &finances)
 {
-//    vector <Finance> finances;
-//    Finance finance;
-    struct less_than_key
+    struct dates_from_older
     {
         inline bool operator() (Finance& finance1,  Finance& finance2)
         {
             return (finance1.getDate() < finance2.getDate());
         }
     };
-    sort(finances.begin(), finances.end(), less_than_key());
-    cout << "finances[0].date: " << finances[0].getDate() << endl;
-//    return finances;
+    sort(finances.begin(), finances.end(), dates_from_older());
 }
