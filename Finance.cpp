@@ -12,6 +12,10 @@ void Finance:: setDate(int newDate)
 {
     date = newDate;
 }
+void Finance:: setDateStr(string newDateStr)
+{
+    dateStr = newDateStr;
+}
 void Finance:: setAmount(int newAmount)
 {
     amount = newAmount;
@@ -31,6 +35,10 @@ int Finance:: getUserId()
 int Finance:: getDate()
 {
     return date;
+}
+string Finance:: getDateStr()
+{
+    return dateStr;
 }
 int Finance:: getAmount()
 {

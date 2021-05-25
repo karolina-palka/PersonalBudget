@@ -18,10 +18,14 @@ class IncomeManager: public FinanceManager
 public:
     IncomeManager(string fileName, int loggedInUserId): FinanceManager(loggedInUserId), xmlIncomeFile(fileName)
     {
-        incomes = xmlIncomeFile.loadFinancesFromFile("income", loggedInUserId);
-        cout << "LOGGED_IN_USER_ID: " << loggedInUserId << endl;
+//        if(xmlIncomeFile.isAnyFinanceSaved("income", loggedInUserId)==true)
+//        {
+            incomes = xmlIncomeFile.loadFinancesFromFile("income", loggedInUserId);
+//        }
+//        cout << "LOGGED_IN_USER_ID: " << loggedInUserId << endl;
     };
     void addNewIncome();
+    void sortOutIncomesByDate();
 };
 
 #endif // INCOMEMANAGER_H_INCLUDED
