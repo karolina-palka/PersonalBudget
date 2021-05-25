@@ -14,10 +14,18 @@ void BalanceManager:: showCurrentMonthBalance()
     incomeManager->sortOutIncomesByDate();
     cout << "Expenses from the current month: " << endl;
     expenseManager->sortOutExpensesByDate();
+    double allIncomes = incomeManager->sumUpIncomesFromTheCurrentMonth();
+
+    cout << "Total incomes: " <<allIncomes<< endl;
+    double allExpenses = expenseManager->sumUpExpensesFromTheCurrentMonth();
+    cout << "Total expenses: " << allExpenses << endl;
+    cout << "Total balance: " << allIncomes - allExpenses << endl;
+
 }
 void BalanceManager:: sortOutExpensesByDate()
 {
     expenseManager->sortOutExpensesByDate();
+
 }
 void BalanceManager:: sortOutIncomesByDate()
 {

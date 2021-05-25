@@ -20,6 +20,7 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     if (answear=='y')
     {
         dateStr = dateManager.getActualDateFromTheSystem();
+        dateInt = dateManager.convertStringDateToIntDate(dateStr);
         dateManager.setDate(dateStr);
     }
     else
@@ -73,4 +74,30 @@ void FinanceManager:: sortOutFinancesByDate(vector <Finance> &finances)
         }
     };
     sort(finances.begin(), finances.end(), dates_from_older());
+}
+double FinanceManager:: sumUpFinancesFromTheCurrentMonth(vector <Finance> &finances)
+{
+    double allFinances=0;
+    int monthFromFinances=0, dateFromFinances=0, actualMonth=0;
+    string actualDate = dateManager.getActualDateFromTheSystem();
+    cout << "actualDate: " << actualDate << endl;
+    int actualDateInt = dateManager.convertStringDateToIntDate(actualDate);
+    cout << "actualDateInt: " << actualDateInt << endl;
+    actualMonth = (actualDateInt%10000 - actualDateInt%100)/100;
+    cout << "actualMonth: " << actualMonth << endl;
+    for (int i=0; i<finances.size(); i++)
+    {
+        dateFromFinances = finances[i].getDate();
+//        cout << "dateFromFinances: " << dateFromFinances << endl;
+        monthFromFinances = (dateFromFinances%10000 - dateFromFinances%100)/100;
+//        cout << "monthFromFinances: " << monthFromFinances << endl;
+        if ( monthFromFinances == actualMonth)
+        {
+            cout << "dateFromFinances: " << dateFromFinances << endl;
+            cout << "monthFromFinances: " << monthFromFinances << endl;
+            cout << "amount: " << finances[i].getAmount() << endl;
+            allFinances += finances[i].getAmount();
+        }
+    }
+    return allFinances;
 }

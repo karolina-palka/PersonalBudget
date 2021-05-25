@@ -18,9 +18,9 @@ int main()
 
 //    personalBudget.registerNewUser();
     personalBudget.logInToUserAccount();
-//    personalBudget.showCurrentMonthBalance();
+    personalBudget.showCurrentMonthBalance();
 //    personalBudget.sortOutExpensesByDate();
-    personalBudget.addNewExpense();
+//    personalBudget.addNewExpense();
 //    personalBudget.logOutTheUser();
 
 

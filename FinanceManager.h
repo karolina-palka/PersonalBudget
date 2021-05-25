@@ -15,12 +15,12 @@ class FinanceManager
     const int LOGGED_IN_USER_ID;
     DateManager dateManager;
 
-
 public:
     FinanceManager(int loggedInUserId): LOGGED_IN_USER_ID(loggedInUserId){};
     Finance addNewFinance(string financeType, int financeId);
     int getLoggedInUserId();
     void sortOutFinancesByDate(vector <Finance> &finances);
+    double sumUpFinancesFromTheCurrentMonth(vector <Finance> &finances);
 };
 
 
