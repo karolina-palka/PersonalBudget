@@ -4,7 +4,7 @@ int DateManager:: convertStringDateToIntDate(string dateToBeConverted)
 {
     string dateToConvert="";
     int dateInt=0;
-//    cout << "date: " << date << endl;
+
     for (int i=2; i<11; i++)
     {
         if(dateToBeConverted[i]!='-')
@@ -13,7 +13,7 @@ int DateManager:: convertStringDateToIntDate(string dateToBeConverted)
         }
     }
     dateInt = AuxiliaryMethods::convertStringToInteger(dateToConvert);
-//    cout << "dateInt: " << dateInt << endl;
+
     return dateInt;
 }
 bool DateManager:: isDateCorrect(string dateToBeChecked)
@@ -32,17 +32,17 @@ bool DateManager:: isDateCorrect(string dateToBeChecked)
     }
     actualDate=getActualDateFromTheSystem();
     actualDateInt = convertStringDateToIntDate(actualDate);
-//    cout << "actualDateInt: " << actualDateInt << endl;
+
     if (dateToBeCheckedInt >= 101 && dateToBeCheckedInt <= actualDateInt)
     {
         int daysOfActualMonth = getNumberOfDaysInActualMonth(dateToBeChecked);
-//        cout << "daysOfActualMonth: " << daysOfActualMonth << endl;
+
         for (int i=8; i<10; i++)
         {
             daysFromDate += dateToBeChecked[i];
         }
         int daysFromDateInt = AuxiliaryMethods::convertStringToInteger(daysFromDate);
-//        cout << "daysFromDateInt: " << daysFromDateInt << endl;
+
         if (daysFromDateInt>0 && daysFromDateInt <= daysOfActualMonth)
 
             return true;
@@ -66,7 +66,7 @@ string DateManager:: getActualDateFromTheSystem()
     char actualDate[MAXLEN];
     tm* local_time = localtime(&now);
     strftime(actualDate, MAXLEN, "%Y-%m-%d", local_time);
-//    cout << "actualDate: " << actualDate << endl;
+
     return actualDate;
 }
 int DateManager:: getNumberOfDaysInActualMonth(string date)
@@ -83,11 +83,10 @@ int DateManager:: getNumberOfDaysInActualMonth(string date)
     {
         year +=date[j];
     }
-//    cout << "month: " << month << endl;
+
     int monthInt = AuxiliaryMethods::convertStringToInteger(month);
     int yearInt = AuxiliaryMethods::convertStringToInteger(year);
-//    cout << "monthInt: " << monthInt << endl;
-//    cout << "yearInt: " << yearInt << endl;
+
     if (monthInt <= 7 && monthInt%2 != 0)
     {
         days = 31;
@@ -124,18 +123,13 @@ int DateManager:: getDateFromTheUser()
 {
     int dateInt;
     string dateStr;
-//    cin.sync();
-//    cin >> dateFrom;
+
     dateStr = AuxiliaryMethods::getTheLine();
-//    cin >> dateStr;
     dateInt = convertStringDateToIntDate(dateStr);
 
     while (isDateCorrect(dateStr)==false)
     {
-//        cin.sync();
-    //cin >> dateFrom;
         dateStr = AuxiliaryMethods::getTheLine();
-//        cin >> dateStr;
         dateInt = convertStringDateToIntDate(dateStr);
     }
     return dateInt;

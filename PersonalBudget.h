@@ -29,7 +29,6 @@ public:
     void logOutTheUser();
     void addNewIncome();
     void addNewExpense();
-//    void sortOutExpensesByDate();
     void showCurrentMonthBalance();
     void showPreviousMonthBalance();
     void showTheChosenPeriodBalance();

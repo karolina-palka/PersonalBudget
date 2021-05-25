@@ -24,7 +24,6 @@ public:
     {
         loggedInUserId = 0;
         users = xmlUsersFile.loadUsersFromFile();
-//        cout << "usersSize: " << users.size() << endl;
     };
     vector <User> registerNewUser();
     int logInToUserAccount();

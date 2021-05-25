@@ -16,7 +16,6 @@ void BalanceManager:: showCurrentMonthBalance()
     cout << ">>> Incomes from the current month <<<" << endl;
     cout << "--------------------------------------" << endl;
     double allIncomes = incomeManager->sumUpIncomesFromTheCurrentMonth();
-//    cout << "---------------------------" << endl;
     cout << ">>> Expenses from the current month <<<" << endl;
     cout << "---------------------------------------" << endl;
     double allExpenses = expenseManager->sumUpExpensesFromTheCurrentMonth();
@@ -35,7 +34,6 @@ void BalanceManager:: showPreviousMonthBalance()
     cout << ">>> Incomes from the previous month <<<" << endl;
     cout << "---------------------------------------" << endl;
     double allIncomes = incomeManager->sumUpIncomesFromThePreviousMonth();
-//    cout << "---------------------------" << endl;
     cout << ">>> Expenses from the previous month <<<" << endl;
     cout << "----------------------------------------" << endl;
     double allExpenses = expenseManager->sumUpExpensesFromThePreviousMonth();
@@ -43,7 +41,6 @@ void BalanceManager:: showPreviousMonthBalance()
     cout << "Total expenses: " << allExpenses << endl;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     double totalBalance = allIncomes - allExpenses;
-//    cout << "---------------------------" << endl;
     cout << "Total balance: " << totalBalance << endl;
 }
 void BalanceManager:: showTheChosenPeriodBalance()
@@ -52,13 +49,12 @@ void BalanceManager:: showTheChosenPeriodBalance()
     expenseManager->sortOutExpensesByDate();
     cout << "Please, type in the date from which the period starts: " << endl;
     int dateFromInt = DateManager::getDateFromTheUser();
-    cout << "Please, type in the date to which the period ends: " << endl;
+    cout << "Please, type in the date when the period ends: " << endl;
     int dateUpToInt = DateManager::getDateFromTheUser();
     cout << "--------------------------------------" << endl;
     cout << ">>> Incomes from the chosen period <<<" << endl;
     cout << "---------------------------------------" << endl;
     double allIncomes = incomeManager->sumUpIncomesFromTheChosenPeriod(dateFromInt, dateUpToInt);
-//    cout << "---------------------------" << endl;
     cout << ">>> Expenses from the chosen period <<<" << endl;
     cout << "---------------------------------------" << endl;
     double allExpenses = expenseManager->sumUpExpensesFromTheChosenPeriod(dateFromInt,dateUpToInt);
@@ -66,7 +62,6 @@ void BalanceManager:: showTheChosenPeriodBalance()
     cout << "Total expenses: " << allExpenses << endl;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     double totalBalance = allIncomes - allExpenses;
-//    cout << "---------------------------" << endl;
     cout << "Total balance: " << totalBalance << endl;
 }
 

@@ -52,7 +52,6 @@ vector <Finance> XmlFinanceFile:: loadFinancesFromFile(string financeType, int l
             if (finance.getAmount() != 0)
             {
                 finances.push_back(finance);
-//                cout << "Loaded." << endl;
             }
         }
         if (finances.empty()==true)
