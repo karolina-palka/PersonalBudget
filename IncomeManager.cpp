@@ -9,6 +9,7 @@ void IncomeManager:: addNewIncome()
 //    int financeId = incomes.size() +1;
 
     income = addNewFinance("income", financeId);
+    incomes.push_back(income);
     xmlIncomeFile.addFinancesToXmlFile(income, "income");
 }
 void IncomeManager:: sortOutIncomesByDate()

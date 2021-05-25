@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    PersonalBudget personalBudget("users-1.xml", "incomes-1.xml", "expenses.xml");
+    PersonalBudget personalBudget("users-1.xml", "incomes-2.xml", "expenses-2.xml");
 
     char choice;
     while(true)
@@ -50,6 +50,10 @@ int main()
                     personalBudget.logOutTheUser();
                     break;
                 }
+            default:
+                cout << "There is no such option!" << endl;
+                system("pause");
+                break;
             }
         }
         else
@@ -72,6 +76,10 @@ int main()
                     personalBudget.exitTheProgram();
                     break;
                 }
+            default:
+                cout << "There is no such option!" << endl;
+                system("pause");
+                break;
             }
         }
 

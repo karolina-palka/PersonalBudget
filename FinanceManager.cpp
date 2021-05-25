@@ -14,7 +14,7 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     double amount;
     string item;
     cout << "Is this " << financeType << " from today? y/n" << endl;
-    cin.sync();
+
     char answear = AuxiliaryMethods::getChar();
     if (answear=='y')
     {
@@ -24,34 +24,28 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     else
     {
         cout << "Please, type the date in the 'yyyy-mm-dd format'" << endl;
-        cin.sync();
-        cin >> dateStr;
-//        cout << "dateStr: " << dateStr << endl;
+        dateStr = AuxiliaryMethods::getTheLine();
 
         while (DateManager::isDateCorrect(dateStr)==false)
         {
-            cin.sync();
-            cin >> dateStr;
-//            cout << "dateStr: " << dateStr << endl;
+            dateStr = AuxiliaryMethods::getTheLine();
         }
     }
     dateInt = DateManager::convertStringDateToIntDate(dateStr);
     finance.setDate(dateInt);
     finance.setDateStr(dateStr);
     cout << "What is the name for that " << financeType << "?" << endl;
-    cin.sync();
+
     item = AuxiliaryMethods::getTheLine();
 
     finance.setItem(item);
     cout << "How much have it cost?" << endl;
-    cin.sync();
 
-    cin >> amountStr;
+    amountStr = AuxiliaryMethods::getTheLine();
     amount = AuxiliaryMethods::convertStringToDouble(amountStr);
     finance.setAmount(amount);
     finance.setUserId(LOGGED_IN_USER_ID);
     finance.setFinanceId(financeId);
-    finances.push_back(finance);
 
     return finance;
 
@@ -69,60 +63,49 @@ void FinanceManager:: sortOutFinancesByDate(vector <Finance> &finances)
 }
 double FinanceManager:: sumUpFinancesFromTheMonth(vector <Finance> &finances, int previousMonth)
 {
-    double allFinances=0;
+    double allFinances=0.0,amount = 0.0;
     int monthFromFinances=0, dateFromFinances=0, actualMonth=0;
     string actualDate = DateManager::getActualDateFromTheSystem();
-//    cout << "actualDate: " << actualDate << endl;
+
     int actualDateInt = DateManager::convertStringDateToIntDate(actualDate) - previousMonth;
-//    cout << "actualDateInt: " << actualDateInt << endl;
+
     actualMonth = (actualDateInt%10000 - actualDateInt%100)/100;
-//    cout << "actualMonth: " << actualMonth << endl;
+
     for (int i=0; i<finances.size(); i++)
     {
         dateFromFinances = finances[i].getDate();
         monthFromFinances = (dateFromFinances%10000 - dateFromFinances%100)/100;
-//        cout << "monthFromFinances: " << monthFromFinances << endl;
+
         if ( monthFromFinances == actualMonth)
         {
             displayFinanceData(finances[i]);
-            allFinances += finances[i].getAmount();
+            amount = finances[i].getAmount();
+            allFinances += amount;
         }
     }
     return allFinances;
 }
 double FinanceManager:: sumUpFinancesFromTheCurrentMonth(vector <Finance> &finances)
 {
-    int allFinances = sumUpFinancesFromTheMonth(finances, 0);
-    return allFinances;
+    return sumUpFinancesFromTheMonth(finances, 0);
 }
 double FinanceManager:: sumUpFinancesFromThePreviousMonth(vector <Finance> &finances)
 {
-    int allFinances = sumUpFinancesFromTheMonth(finances, 100);
-    return allFinances;
+    return sumUpFinancesFromTheMonth(finances, 100);
 }
 
 double FinanceManager:: sumUpFinancesFromTheChosenPeriod(vector <Finance> &finances, int dateFromInt, int dateUpToInt)
 {
-    double allFinances=0;
+    double allFinances=0.0;
     int monthFromFinances=0, dateFromFinances=0, monthFrom=0, monthUpTo=0;
 
-//    cout << "dateFromInt: " << dateFromInt << endl;
-//    cout << "dateUpToInt: " << dateUpToInt << endl;
-//    monthFrom = (dateFromInt%10000 - dateFromInt%100)/100;
-//    monthUpTo = (dateUpToInt%10000 - dateUpToInt%100)/100;
-//    cout << "monthFrom: " << monthFrom << endl;
     for (int i=0; i<finances.size(); i++)
     {
         dateFromFinances = finances[i].getDate();
-//        monthFromFinances = (dateFromFinances%10000 - dateFromFinances%100)/100;
-//        cout << "monthFromFinances: " << monthFromFinances << endl;
+
         if ( dateFromFinances >= dateFromInt && dateFromFinances <= dateUpToInt )
         {
             displayFinanceData(finances[i]);
-//            cout << "dateFromFinances: " << dateFromFinances << endl;
-//            cout << "monthFromFinances: " << monthFromFinances << endl;
-//            cout << "amount: " << finances[i].getAmount() << endl;
-
             allFinances += finances[i].getAmount();
         }
     }
@@ -130,10 +113,9 @@ double FinanceManager:: sumUpFinancesFromTheChosenPeriod(vector <Finance> &finan
 }
 void FinanceManager:: displayFinanceData(Finance &finance)
 {
-    cout << "userId: " <<  finance.getUserId() << endl;
-    cout << "financeId: " << finance.getFinanceId() << endl;
-//    cout << "date: " << finance.getDate() << endl;
-    cout << "date: " << finance.getDateStr() << endl;
-    cout << "item: " << finance.getItem() << endl;
-    cout << "amount: " << finance.getAmount() << endl;
+    cout << "userId: " <<  finance.getUserId() << "| " << "financeId: " << finance.getFinanceId() << "| " ;
+    cout << "date: " << finance.getDateStr() << "| "<< endl;
+    cout << "item: " << finance.getItem() << "| " << endl;
+    cout << "amount: " << finance.getAmount() << "| " << endl;
+    cout << "---------------------------------------" << endl;
 }
