@@ -40,16 +40,9 @@ User UserManager:: getNewUserData()
 
     return user;
 }
-//int UserManager:: getNewUserId()
-//{
-//    if (uzytkownicy.empty() == true)
-//        return 1;
-//    else
-//        return users.back().getId() + 1;
-//}
+
 int UserManager:: getTheUserId()
 {
-    cout << "loggedInUserId: " << loggedInUserId << endl;
     return loggedInUserId;
 }
 bool UserManager:: isTheLoginInUse(string login)
@@ -58,34 +51,33 @@ bool UserManager:: isTheLoginInUse(string login)
     {
         if (login == users[i].getLogin())
         {
-            cout << endl << "There is no user with that login." << endl;
+            cout << endl << "There is already user with that login. Please try another username." << endl;
             return true;
         }
     }
     return false;
 }
-void UserManager::logInToUserAccount()
+int UserManager::logInToUserAccount()
 {
     int i =0;
     string username, password;
     cout << "Enter the username: " << endl;
-    cin >> username;
+    username = AuxiliaryMethods::getTheLine();
 
     while (i < users.size())
-
     {
         loggedInUserId = checkPasswordUpToThreeTimes(users[i], username);
-        if (loggedInUserId ==-1)
+        if (loggedInUserId>0)
         {
-            break;
+            cout << "id: " << loggedInUserId << endl;
+            return loggedInUserId;
         }
-        else if (loggedInUserId> 0)
-        {
-            break;
-        }
+        else if (loggedInUserId==-1)
+            return loggedInUserId;
         i++;
     }
-    cout << "id: " << loggedInUserId << endl;
+    cout << "There is no account with that username. Please try another one." << endl;
+    return loggedInUserId;
 }
 int UserManager::checkPasswordUpToThreeTimes(User user, string username)
 {
@@ -153,5 +145,4 @@ void UserManager:: changePassword()
             xmlUsersFile.saveNewPasswordToXmlFile(users[i]);
         }
     }
-//    cout << "The new password has been saved." << endl;
 }

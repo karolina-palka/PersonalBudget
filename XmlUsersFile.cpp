@@ -28,11 +28,8 @@ void XmlUsersFile:: addUserToXmlFile(User user)
     string surname = user.getSurname();
     xml.AddChildElem("surname", surname);
     xml.Save(XmlFile::getFileName());
-    cout << "Changes saved." << endl;
-    system("pause");
 
     cout << "Changes saved." << endl;
-    system("pause");
 }
 vector <User> XmlUsersFile:: loadUsersFromFile()
 {
@@ -65,23 +62,22 @@ User XmlUsersFile:: loadUserDataFromFile()
     xml.FindElem("userId");
     userIdstr = xml.GetData();
     user.setId(AuxiliaryMethods:: convertStringToInteger(userIdstr));
-    cout << user.getId() << endl;
+
     xml.FindElem("userData");
     xml.IntoElem();
     xml.FindElem("login");
     user.setLogin(xml.GetData());
-    cout << user.getLogin() << endl;
+
     xml.FindElem("password");
     user.setPassword(xml.GetData());
-    cout << user.getPassword() << endl;
+
     xml.FindElem("name");
     user.setName(xml.GetData());
-    cout << user.getName() << endl;
+
     xml.FindElem("surname");
     user.setSurname(xml.GetData());
     xml.OutOfElem();
     xml.OutOfElem();
-    cout << user.getSurname() << endl;
 
     return user;
 }

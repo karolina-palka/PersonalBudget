@@ -9,14 +9,17 @@ void PersonalBudget:: registerNewUser()
 void PersonalBudget:: logInToUserAccount()
 {
     userManager.logInToUserAccount();
-    balanceManager = new BalanceManager(INCOMES_FILE_NAME, EXPENSES_FILE_NAME, userManager.getTheUserId());
+    if (userManager.getTheUserId()>0)
+    {
+        balanceManager = new BalanceManager(INCOMES_FILE_NAME, EXPENSES_FILE_NAME, userManager.getTheUserId());
+    }
     system("pause");
 }
 void PersonalBudget:: logOutTheUser()
 {
     userManager.logOutTheUser();
     cout << "You are logged out." << endl;
-    Sleep(1500);
+    Sleep(1000);
 }
 void PersonalBudget:: addNewIncome()
 {

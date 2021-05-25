@@ -24,10 +24,10 @@ public:
     {
         loggedInUserId = 0;
         users = xmlUsersFile.loadUsersFromFile();
-        cout << "usersSize: " << users.size() << endl;
+//        cout << "usersSize: " << users.size() << endl;
     };
     vector <User> registerNewUser();
-    void logInToUserAccount();
+    int logInToUserAccount();
     int logOutTheUser();
     int getTheUserId();
     char chooseOptionFromMainMenu();

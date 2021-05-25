@@ -7,6 +7,7 @@ void ExpenseManager:: addNewExpense()
     int financeId = xmlExpensesFile.getNewFinanceId("expense", getLoggedInUserId());
 
     expense = addNewFinance("expense", financeId);
+    expenses.push_back(expense);
     xmlExpensesFile.addFinancesToXmlFile(expense, "expense");
 }
 void ExpenseManager:: sortOutExpensesByDate()
