@@ -32,6 +32,7 @@ public:
     void sortOutExpensesByDate();
     void showCurrentMonthBalance();
     void showPreviousMonthBalance();
+    void showTheChosenPeriodBalance();
 //    void loadUsersFromFile();
 };
 

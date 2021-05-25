@@ -35,6 +35,10 @@ void PersonalBudget:: showPreviousMonthBalance()
 {
     balanceManager->showPreviousMonthBalance();
 }
+void PersonalBudget:: showTheChosenPeriodBalance()
+{
+    balanceManager->showTheChosenPeriodBalance();
+}
 //void PersonalBudget:: loadUsersFromFile()
 //{
 //    userManager.loadUsersFromFile();

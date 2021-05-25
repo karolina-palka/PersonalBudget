@@ -31,6 +31,7 @@ public:
     void sortOutExpensesByDate();
     double sumUpExpensesFromTheCurrentMonth();
     double sumUpExpensesFromThePreviousMonth();
+    double sumUpExpensesFromTheChosenPeriod(int dateFrom, int dateUpToInt);
 };
 
 

@@ -7,8 +7,7 @@ int FinanceManager:: getLoggedInUserId()
 Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 {
     Finance finance;
-//    DateManager dateManager;
-//    char dateStr[11];
+
     string dateStr, amountStr;
     vector <Finance> finances;
     int dateInt;
@@ -19,31 +18,24 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     char answear = AuxiliaryMethods::getChar();
     if (answear=='y')
     {
-        dateStr = dateManager.getActualDateFromTheSystem();
-        dateInt = dateManager.convertStringDateToIntDate(dateStr);
-        dateManager.setDate(dateStr);
+        dateStr = DateManager::getActualDateFromTheSystem();
+        dateInt = DateManager::convertStringDateToIntDate(dateStr);
     }
     else
     {
-//        DateManager:: getDateFromTheUser
-//        char dateStr[11] = DateManager::getDate();
         cout << "Please, type the date in the 'yyyy-mm-dd format'" << endl;
         cin.sync();
         cin >> dateStr;
         cout << "dateStr: " << dateStr << endl;
-        dateManager.setDate(dateStr);
-        dateInt = dateManager.convertStringDateToIntDate(dateStr);
-        while (dateManager.isDateCorrect(dateInt)==false)
+
+        while (DateManager::isDateCorrect(dateStr)==false)
         {
             cin.sync();
             cin >> dateStr;
             cout << "dateStr: " << dateStr << endl;
-            dateManager.setDate(dateStr);
-            dateInt = dateManager.convertStringDateToIntDate(dateStr);
         }
-//            dateManager.setDate(dateStr);
-//        dateManager.setDate(dateInt);
     }
+    dateInt = DateManager::convertStringDateToIntDate(dateStr);
     finance.setDate(dateInt);
     finance.setDateStr(dateStr);
     cout << "What is the name for that " << financeType << "?" << endl;
@@ -62,7 +54,7 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     finances.push_back(finance);
 
     return finance;
-//    xmlIncomeFile.save
+
 }
 void FinanceManager:: sortOutFinancesByDate(vector <Finance> &finances)
 {
@@ -79,9 +71,9 @@ double FinanceManager:: sumUpFinancesFromTheMonth(vector <Finance> &finances, in
 {
     double allFinances=0;
     int monthFromFinances=0, dateFromFinances=0, actualMonth=0;
-    string actualDate = dateManager.getActualDateFromTheSystem();
+    string actualDate = DateManager::getActualDateFromTheSystem();
     cout << "actualDate: " << actualDate << endl;
-    int actualDateInt = dateManager.convertStringDateToIntDate(actualDate) - previousMonth;
+    int actualDateInt = DateManager::convertStringDateToIntDate(actualDate) - previousMonth;
     cout << "actualDateInt: " << actualDateInt << endl;
     actualMonth = (actualDateInt%10000 - actualDateInt%100)/100;
     cout << "actualMonth: " << actualMonth << endl;
@@ -108,5 +100,31 @@ double FinanceManager:: sumUpFinancesFromTheCurrentMonth(vector <Finance> &finan
 double FinanceManager:: sumUpFinancesFromThePreviousMonth(vector <Finance> &finances)
 {
     int allFinances = sumUpFinancesFromTheMonth(finances, 100);
+    return allFinances;
+}
+
+double FinanceManager:: sumUpFinancesFromTheChosenPeriod(vector <Finance> &finances, int dateFromInt, int dateUpToInt)
+{
+    double allFinances=0;
+    int monthFromFinances=0, dateFromFinances=0, monthFrom=0, monthUpTo=0;
+
+    cout << "dateFromInt: " << dateFromInt << endl;
+    cout << "dateUpToInt: " << dateUpToInt << endl;
+    monthFrom = (dateFromInt%10000 - dateFromInt%100)/100;
+    monthUpTo = (dateUpToInt%10000 - dateUpToInt%100)/100;
+    cout << "monthFrom: " << monthFrom << endl;
+    for (int i=0; i<finances.size(); i++)
+    {
+        dateFromFinances = finances[i].getDate();
+        monthFromFinances = (dateFromFinances%10000 - dateFromFinances%100)/100;
+        cout << "monthFromFinances: " << monthFromFinances << endl;
+        if ( monthFromFinances >= monthFrom && monthFromFinances <= monthUpTo )
+        {
+            cout << "dateFromFinances: " << dateFromFinances << endl;
+            cout << "monthFromFinances: " << monthFromFinances << endl;
+            cout << "amount: " << finances[i].getAmount() << endl;
+            allFinances += finances[i].getAmount();
+        }
+    }
     return allFinances;
 }

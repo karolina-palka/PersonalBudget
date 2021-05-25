@@ -30,3 +30,7 @@ double ExpenseManager:: sumUpExpensesFromThePreviousMonth()
 {
     double allExpenses = sumUpFinancesFromThePreviousMonth(expenses);
 }
+double ExpenseManager:: sumUpExpensesFromTheChosenPeriod(int dateFrom, int dateUpToInt)
+{
+    double allExpenses = sumUpFinancesFromTheChosenPeriod(expenses, dateFrom, dateUpToInt);
+}

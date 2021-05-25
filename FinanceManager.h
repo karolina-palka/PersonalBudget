@@ -13,7 +13,7 @@ using namespace std;
 class FinanceManager
 {
     const int LOGGED_IN_USER_ID;
-    DateManager dateManager;
+//    DateManager dateManager;
     double sumUpFinancesFromTheMonth(vector <Finance> &finances, int previousMonth);
 
 public:
@@ -23,6 +23,8 @@ public:
     void sortOutFinancesByDate(vector <Finance> &finances);
     double sumUpFinancesFromTheCurrentMonth(vector <Finance> &finances);
     double sumUpFinancesFromThePreviousMonth(vector <Finance> &finances);
+    double sumUpFinancesFromTheChosenPeriod(vector <Finance> &finances, int dateFrom, int dateUpToInt);
+
 };
 
 

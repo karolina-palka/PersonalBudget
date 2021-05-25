@@ -4,6 +4,7 @@
 #include <string>
 #include "IncomeManager.h"
 #include "ExpenseManager.h"
+#include "DateManager.h"
 
 class BalanceManager
 {
@@ -31,6 +32,7 @@ class BalanceManager
     void addNewExpense();
     void showCurrentMonthBalance();
     void showPreviousMonthBalance();
+    void showTheChosenPeriodBalance();
 //    void sortOutExpensesByDate();
 //    void sortOutIncomesByDate();
 };

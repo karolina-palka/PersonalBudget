@@ -32,3 +32,7 @@ double IncomeManager:: sumUpIncomesFromThePreviousMonth()
 {
     double allIncomes = sumUpFinancesFromThePreviousMonth(incomes);
 }
+double IncomeManager:: sumUpIncomesFromTheChosenPeriod(int dateFrom, int dateUpToInt)
+{
+    double allIncomes = sumUpFinancesFromTheChosenPeriod(incomes, dateFrom, dateUpToInt);
+}

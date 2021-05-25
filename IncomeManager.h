@@ -28,6 +28,7 @@ public:
     void sortOutIncomesByDate();
     double sumUpIncomesFromTheCurrentMonth();
     double sumUpIncomesFromThePreviousMonth();
+    double sumUpIncomesFromTheChosenPeriod(int dateFrom, int dateUpToInt);
 };
 
 #endif // INCOMEMANAGER_H_INCLUDED
