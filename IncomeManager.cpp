@@ -11,3 +11,13 @@ void IncomeManager:: addNewIncome()
     income = addNewFinance("income", financeId);
     xmlIncomeFile.addFinancesToXmlFile(income, "income");
 }
+void IncomeManager:: sortOutIncomesByDate()
+{
+    sortOutFinancesByDate(incomes);
+    for (int i=0; i< incomes.size(); i++)
+    {
+        cout << incomes[i].getUserId() << endl;
+        cout << incomes[i].getFinanceId() << endl;
+        cout << incomes[i].getDate() << endl;
+    }
+}

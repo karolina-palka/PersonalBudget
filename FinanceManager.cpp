@@ -18,7 +18,6 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
     char answear = AuxiliaryMethods::getChar();
     if (answear=='y')
     {
-//        dateInt = 210524;
         dateStr = dateManager.getActualDateFromTheSystem();
         dateManager.setDate(dateStr);
     }
@@ -61,4 +60,19 @@ Finance FinanceManager:: addNewFinance(string financeType, int financeId)
 
     return finance;
 //    xmlIncomeFile.save
+}
+void FinanceManager:: sortOutFinancesByDate(vector <Finance> &finances)
+{
+//    vector <Finance> finances;
+//    Finance finance;
+    struct less_than_key
+    {
+        inline bool operator() (Finance& finance1,  Finance& finance2)
+        {
+            return (finance1.getDate() < finance2.getDate());
+        }
+    };
+    sort(finances.begin(), finances.end(), less_than_key());
+    cout << "finances[0].date: " << finances[0].getDate() << endl;
+//    return finances;
 }

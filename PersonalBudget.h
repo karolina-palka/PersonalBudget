@@ -29,6 +29,7 @@ public:
     void logOutTheUser();
     void addNewIncome();
     void addNewExpense();
+    void sortOutExpensesByDate();
 //    void loadUsersFromFile();
 };
 

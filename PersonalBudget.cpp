@@ -23,7 +23,10 @@ void PersonalBudget:: addNewExpense()
 {
     balanceManager->addNewExpense();
 }
-
+void PersonalBudget:: sortOutExpensesByDate()
+{
+    balanceManager->sortOutExpensesByDate();
+}
 //void PersonalBudget:: loadUsersFromFile()
 //{
 //    userManager.loadUsersFromFile();

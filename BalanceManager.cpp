@@ -8,3 +8,11 @@ void BalanceManager:: addNewExpense()
 {
     expenseManager->addNewExpense();
 }
+void BalanceManager:: showCurrentMonthBalance()
+{
+    ;
+}
+void BalanceManager:: sortOutExpensesByDate()
+{
+    expenseManager->sortOutExpensesByDate();
+}
