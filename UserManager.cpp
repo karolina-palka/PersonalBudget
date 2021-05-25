@@ -25,7 +25,6 @@ User UserManager:: getNewUserData()
 
     } while (isTheLoginInUse(user.getLogin()) == true);
 
-//    user.setLogin(login);
     user.setId(users.size()+ 1);
     cout << "Enter password: " << endl;
     cin >> password;

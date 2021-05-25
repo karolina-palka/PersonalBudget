@@ -25,5 +25,4 @@ public:
 };
 
 
-
 #endif // USER_H_INCLUDED

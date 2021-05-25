@@ -12,8 +12,6 @@ class IncomeManager: public FinanceManager
 {
     vector <Finance> incomes;
     XmlFinanceFile xmlIncomeFile;
-//    const string INCOMES_FILE_NAME;
-//    const int LOGGED_IN_USER_ID;
 
 public:
     IncomeManager(string fileName, int loggedInUserId): FinanceManager(loggedInUserId), xmlIncomeFile(fileName)
