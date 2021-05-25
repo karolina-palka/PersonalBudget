@@ -17,15 +17,8 @@ class ExpenseManager: public FinanceManager
 public:
     ExpenseManager(string fileName, int loggedInUserId): FinanceManager(loggedInUserId), xmlExpensesFile(fileName)
     {
-//        if(xmlExpensesFile.isAnyFinanceSaved("expense", loggedInUserId)==true)
-//        {
-             expenses = xmlExpensesFile.loadFinancesFromFile("expense", loggedInUserId);
-//        }
-//        else
-//        {
-//            cout << "You don't have any expenses saved yet." << endl;
-//        }
-//        cout << "LOGGED_IN_USER_ID: " << loggedInUserId << endl;
+        expenses = xmlExpensesFile.loadFinancesFromFile("expense", loggedInUserId);
+
     }
     void addNewExpense();
     void sortOutExpensesByDate();

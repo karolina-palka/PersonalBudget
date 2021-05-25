@@ -85,9 +85,6 @@ double FinanceManager:: sumUpFinancesFromTheMonth(vector <Finance> &finances, in
         if ( monthFromFinances == actualMonth)
         {
             displayFinanceData(finances[i]);
-//            cout << "dateFromFinances: " << dateFromFinances << endl;
-//            cout << "monthFromFinances: " << monthFromFinances << endl;
-//            cout << "amount: " << finances[i].getAmount() << endl;
             allFinances += finances[i].getAmount();
         }
     }

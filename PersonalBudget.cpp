@@ -59,3 +59,8 @@ char PersonalBudget:: chooseOptionFromTheUserMenu()
 {
     balanceManager->chooseOptionFromTheUserMenu();
 }
+void PersonalBudget:: changePassword()
+{
+    userManager.changePassword();
+    system("pause");
+}

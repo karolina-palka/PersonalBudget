@@ -16,6 +16,7 @@ public:
 
     void addUserToXmlFile(User user);
     vector <User> loadUsersFromFile();
+    void saveNewPasswordToXmlFile(User &user);
 };
 
 

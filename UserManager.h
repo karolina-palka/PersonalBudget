@@ -32,6 +32,7 @@ public:
     int getTheUserId();
     char chooseOptionFromMainMenu();
     bool isTheUserLoggedIn();
+    void changePassword();
 
 };
 

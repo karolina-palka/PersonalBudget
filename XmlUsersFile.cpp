@@ -85,3 +85,27 @@ User XmlUsersFile:: loadUserDataFromFile()
 
     return user;
 }
+void XmlUsersFile:: saveNewPasswordToXmlFile(User &user)
+{
+    int userId = user.getId();
+    string newPassword = user.getPassword();
+    string userIdStr = AuxiliaryMethods:: convertIntToString(userId);
+
+    xml.Load(XmlFile::getFileName());
+    while (xml.FindElem("user")==true)
+    {
+        xml.IntoElem();
+        xml.FindElem("userId");
+        if (userIdStr == xml.GetData())
+        {
+            xml.FindElem("userData");
+            xml.IntoElem();
+            xml.FindElem("password");
+            xml.RemoveElem();
+            xml.AddElem("password", newPassword);
+        }
+        xml.OutOfElem();
+    }
+    xml.Save(XmlFile::getFileName());
+    cout << "The new password has been saved." << endl;
+}

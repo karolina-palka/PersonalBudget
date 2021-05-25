@@ -37,6 +37,7 @@ public:
     bool isTheUserLoggedIn();
     void exitTheProgram();
     char chooseOptionFromTheUserMenu();
+    void changePassword();
 
 };
 
