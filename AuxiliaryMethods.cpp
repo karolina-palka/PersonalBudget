@@ -45,12 +45,19 @@ char AuxiliaryMethods:: getChar()
             character = input[0];
             break;
         }
-        cout << "This is not a ssingle character. Please type again." << endl;
+        cout << "This is not a single character. Please type again." << endl;
     }
     return character;
 }
 double AuxiliaryMethods:: convertStringToDouble(string stringToBeConverted)
 {
+    for (int i=0; i<stringToBeConverted.length(); i++)
+    {
+        if (stringToBeConverted[i]==',')
+        {
+            stringToBeConverted[i]= '.';
+        }
+    }
     double number = stod(stringToBeConverted);
     return number;
 }
