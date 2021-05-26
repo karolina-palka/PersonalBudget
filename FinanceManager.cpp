@@ -63,7 +63,7 @@ void FinanceManager:: sortOutFinancesByDate(vector <Finance> &finances)
 }
 double FinanceManager:: sumUpFinancesFromTheMonth(vector <Finance> &finances, int previousMonth)
 {
-    double allFinances=0.0,amount = 0.0;
+    double allFinances=0.0, amount = 0.0;
     int monthFromFinances=0, dateFromFinances=0, actualMonth=0;
     string actualDate = DateManager::getActualDateFromTheSystem();
 

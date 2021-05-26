@@ -48,11 +48,11 @@ void PersonalBudget:: showTheChosenPeriodBalance()
 }
 char PersonalBudget:: chooseOptionFromMainMenu()
 {
-    userManager.chooseOptionFromMainMenu();
+    return userManager.chooseOptionFromMainMenu();
 }
 bool PersonalBudget:: isTheUserLoggedIn()
 {
-    userManager.isTheUserLoggedIn();
+    return userManager.isTheUserLoggedIn();
 }
 void PersonalBudget:: exitTheProgram()
 {
@@ -60,7 +60,7 @@ void PersonalBudget:: exitTheProgram()
 }
 char PersonalBudget:: chooseOptionFromTheUserMenu()
 {
-    balanceManager->chooseOptionFromTheUserMenu();
+   return balanceManager->chooseOptionFromTheUserMenu();
 }
 void PersonalBudget:: changePassword()
 {

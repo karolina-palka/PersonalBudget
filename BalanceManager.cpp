@@ -19,7 +19,7 @@ void BalanceManager:: showCurrentMonthBalance()
     cout << ">>> Expenses from the current month <<<" << endl;
     cout << "---------------------------------------" << endl;
     double allExpenses = expenseManager->sumUpExpensesFromTheCurrentMonth();
-    cout << "Total incomes: " <<allIncomes<< endl;
+    cout << "Total incomes: " << allIncomes << endl;
     cout << "Total expenses: " << allExpenses << endl;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     double totalBalance = allIncomes - allExpenses;
@@ -37,7 +37,7 @@ void BalanceManager:: showPreviousMonthBalance()
     cout << ">>> Expenses from the previous month <<<" << endl;
     cout << "----------------------------------------" << endl;
     double allExpenses = expenseManager->sumUpExpensesFromThePreviousMonth();
-    cout << "Total incomes: " <<allIncomes<< endl;
+    cout << "Total incomes: " << allIncomes << endl;
     cout << "Total expenses: " << allExpenses << endl;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     double totalBalance = allIncomes - allExpenses;

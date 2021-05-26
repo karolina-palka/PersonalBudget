@@ -18,12 +18,15 @@ void ExpenseManager:: sortOutExpensesByDate()
 double ExpenseManager:: sumUpExpensesFromTheCurrentMonth()
 {
     double allExpenses = sumUpFinancesFromTheCurrentMonth(expenses);
+    return allExpenses;
 }
 double ExpenseManager:: sumUpExpensesFromThePreviousMonth()
 {
     double allExpenses = sumUpFinancesFromThePreviousMonth(expenses);
+    return allExpenses;
 }
 double ExpenseManager:: sumUpExpensesFromTheChosenPeriod(int dateFrom, int dateUpToInt)
 {
     double allExpenses = sumUpFinancesFromTheChosenPeriod(expenses, dateFrom, dateUpToInt);
+    return allExpenses;
 }

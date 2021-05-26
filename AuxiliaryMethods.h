@@ -1,6 +1,7 @@
 #ifndef AUXILIARYMETHODS_H_INCLUDED
 #define AUXILIARYMETHODS_H_INCLUDED
-
+//#include <string.h>
+//#include <string>
 #include <iostream>
 #include <vector>
 #include <sstream>
@@ -18,8 +19,7 @@ public:
     static char getChar();
     static double convertStringToDouble(string stringToBeConverted);
     static string convertDoubleToString(double numberToBeConverted);
-//    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-//    static int wczytajLiczbeCalkowita();
+
 };
 
 #endif // AUXILIARYMETHODS_H_INCLUDED
