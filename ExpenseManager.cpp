@@ -3,9 +3,9 @@
 void ExpenseManager:: addNewExpense()
 {
     Finance expense;
+//    int financeId = xmlExpensesFile.getNewFinanceId("expense", getLoggedInUserId());
 
-    int financeId = xmlExpensesFile.getNewFinanceId("expense", getLoggedInUserId());
-
+    int financeId = xmlExpensesFile.getNewFinanceId("expense");
     expense = addNewFinance("expense", financeId);
     expenses.push_back(expense);
     xmlExpensesFile.addFinancesToXmlFile(expense, "expense");

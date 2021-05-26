@@ -97,7 +97,7 @@ double FinanceManager:: sumUpFinancesFromThePreviousMonth(vector <Finance> &fina
 double FinanceManager:: sumUpFinancesFromTheChosenPeriod(vector <Finance> &finances, int dateFromInt, int dateUpToInt)
 {
     double allFinances=0.0;
-    int monthFromFinances=0, dateFromFinances=0, monthFrom=0, monthUpTo=0;
+    int dateFromFinances=0;
 
     for (int i=0; i<finances.size(); i++)
     {

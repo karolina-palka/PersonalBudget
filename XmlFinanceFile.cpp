@@ -111,22 +111,18 @@ Finance XmlFinanceFile:: loadFinanceFromFile(int loggedInUserId)
     }
     return finance;
 }
-int XmlFinanceFile:: getNewFinanceId(string financeType, int loggedInUserId)
+int XmlFinanceFile:: getNewFinanceId(string financeType)
 {
     int financeId = 0;
     xml.Load(XmlFile::getFileName());
-    string loggedInUserIdStr = AuxiliaryMethods:: convertIntToString(loggedInUserId);
 
     while (xml.FindElem(financeType))
     {
         xml.IntoElem();
-        xml.FindElem("userId");
-        if (loggedInUserIdStr == xml.GetData())
-        {
-            xml.FindElem("financeId");
-            string financeIdstr = xml.GetData();
-            financeId = AuxiliaryMethods:: convertStringToInteger(financeIdstr);
-        }
+
+        xml.FindElem("financeId");
+        string financeIdstr = xml.GetData();
+        financeId = AuxiliaryMethods:: convertStringToInteger(financeIdstr);
         xml.OutOfElem();
     }
     return financeId + 1;
