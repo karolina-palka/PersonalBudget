@@ -18,8 +18,7 @@ public:
     XmlFinanceFile(string fileName): XmlFile(fileName) {};
     void addFinancesToXmlFile(Finance finance, string financeType);
     vector <Finance> loadFinancesFromFile(string financeType, int loggedInUserId);
-    int getNewFinanceId(string financeType, int loggedInUserId);
-//    bool isAnyFinanceSaved(string financeType, int loggedInUserId);
+    int getNewFinanceId(string financeType);
 };
 
 

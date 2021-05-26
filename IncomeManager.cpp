@@ -3,9 +3,10 @@
 void IncomeManager:: addNewIncome()
 {
     Finance income;
-    int loggedInUserId = getLoggedInUserId();
-    cout << "loggedInUserId: " << loggedInUserId << endl;
-    int financeId = xmlIncomeFile.getNewFinanceId("income", getLoggedInUserId());
+//    int loggedInUserId = getLoggedInUserId();
+//    cout << "loggedInUserId: " << loggedInUserId << endl;
+    int financeId = xmlIncomeFile.getNewFinanceId("income");
+//    int financeId = xmlIncomeFile.getNewFinanceId("income", getLoggedInUserId());
 
     income = addNewFinance("income", financeId);
     incomes.push_back(income);

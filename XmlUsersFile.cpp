@@ -35,7 +35,6 @@ vector <User> XmlUsersFile:: loadUsersFromFile()
 {
     User user;
     vector <User> users;
-    int userId;
     string login, name, surname, password, userIdstr;
     xml.Load(XmlFile::getFileName());
 
