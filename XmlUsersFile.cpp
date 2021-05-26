@@ -8,7 +8,7 @@ void XmlUsersFile:: addUserToXmlFile(User user)
         xml.InsertNode( xml.MNT_PROCESSING_INSTRUCTION, "xml" );
         xml.SetAttrib( "version", "1.0");
         xml.SetAttrib("standalone", "no" );
-        xml.AddNode( xml.MNT_DOCUMENT_TYPE, "<!DOCTYPE user SYSTEM 'finances.dtd'>");
+        xml.AddNode( xml.MNT_DOCUMENT_TYPE, "<!DOCTYPE user SYSTEM 'users.dtd'>");
 
         xml.AddNode( CMarkup::MNT_COMMENT, "user" );
     }
